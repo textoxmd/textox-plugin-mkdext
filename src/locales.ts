@@ -49,6 +49,8 @@ export const locales: Record<string, Record<string, unknown>> = {
       label: 'Math',
       description: 'Render LaTeX math formulas inline and in fenced code blocks',
       copyLatex: 'Copy LaTeX Source',
+      mathBlock: 'Math Block',
+      mathBlockDesc: 'Insert math block',
     },
     footnote: {
       label: 'Footnote',
@@ -103,6 +105,8 @@ export const locales: Record<string, Record<string, unknown>> = {
       label: '数学公式',
       description: '渲染行内与代码块中的 LaTeX 数学公式',
       copyLatex: '复制 LaTeX 源码',
+      mathBlock: '数学公式',
+      mathBlockDesc: '插入数学公式块',
     },
     footnote: {
       label: '脚注',

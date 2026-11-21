@@ -1,5 +1,5 @@
 import { wholeTokenSpan as pe, markConsumed as I, markExtRanges as M, pairMarks as N, leaveLineDraft as fe, renderFormulaToSVG as ae, defineCodeBlockExtension as he, Plugin as ge } from "@textox/plugin-sdk";
-import { Plugin as v, PluginKey as F, TextSelection as y } from "prosemirror-state";
+import { Plugin as v, PluginKey as D, TextSelection as w } from "prosemirror-state";
 import { Decoration as S, DecorationSet as T } from "prosemirror-view";
 import { Transform as be } from "prosemirror-transform";
 const B = /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]/i, se = {
@@ -13,7 +13,7 @@ function ke(e) {
   const t = document.createElement("span");
   return t.className = "alert-label", t.contentEditable = "false", t.textContent = se[e] ?? e, t;
 }
-function we(e, t) {
+function ye(e, t) {
   const o = [];
   return e.descendants((n, a) => {
     if (n.type.name !== "blockquote") return !0;
@@ -32,7 +32,7 @@ function we(e, t) {
     return t >= l && t <= _ || (o.push(S.inline(l, _, { class: "syntax-hidden" })), o.push(S.widget(l, ke(c), { side: -1 }))), !1;
   }), o;
 }
-function ye(e) {
+function we(e) {
   e.core.ruler.push("alert_split", (t) => {
     const o = t.tokens;
     for (let n = 0; n < o.length; n++) {
@@ -70,7 +70,7 @@ function ye(e) {
 }
 const xe = {
   name: "alert",
-  mdItPlugins: [ye],
+  mdItPlugins: [we],
   inline: {
     markNames: [],
     extRanges: (e) => {
@@ -81,10 +81,10 @@ const xe = {
   },
   plugins: (e) => [
     new v({
-      key: new F("alert-decoration"),
+      key: new D("alert-decoration"),
       props: {
         decorations(t) {
-          const o = we(t.doc, t.selection.$head.pos);
+          const o = ye(t.doc, t.selection.$head.pos);
           return o.length > 0 ? T.create(t.doc, o) : T.empty;
         }
       }
@@ -108,7 +108,7 @@ function Ee() {
         const s = a.parentOffset, i = a.parent.content.size, r = s < i ? a.parent.textBetween(s, s + 1) : "";
         if ($e.has(n) && r === n) {
           const u = e.state.tr.setSelection(
-            y.create(e.state.doc, t + 1)
+            w.create(e.state.doc, t + 1)
           );
           return e.dispatch(u), !0;
         }
@@ -117,7 +117,7 @@ function Ee() {
         const l = a.parent.textBetween(s, i);
         if (!Se(l)) return !1;
         const _ = e.state.tr.insertText(n + c, t, o);
-        return _.setSelection(y.create(_.doc, t + 1)), e.dispatch(_), !0;
+        return _.setSelection(w.create(_.doc, t + 1)), e.dispatch(_), !0;
       }
     }
   });
@@ -157,8 +157,8 @@ function je(e, t, o, n, a) {
       } else
         b = p.slice(1, -1);
       if (h > m) {
-        const w = new u("text", "", 0);
-        w.content = l.slice(m, h), d.push(w);
+        const y = new u("text", "", 0);
+        y.content = l.slice(m, h), d.push(y);
       }
       const x = new u("emoji", "", 0);
       x.markup = b, x.content = t[b], d.push(x), m = h + p.length;
@@ -188,7 +188,7 @@ function je(e, t, o, n, a) {
 function Ie(e) {
   return e.replace(/[.?*+^$[\]\\(){}|-]/g, "\\$&");
 }
-function Fe(e) {
+function De(e) {
   let t = e.defs;
   e.enabled.length && (t = Object.keys(t).reduce((r, c) => (e.enabled.indexOf(c) >= 0 && (r[c] = t[c]), r), {}));
   const o = Object.keys(e.shortcuts).reduce((r, c) => t[c] ? Array.isArray(e.shortcuts[c]) ? (e.shortcuts[c].forEach((l) => {
@@ -204,8 +204,8 @@ function Fe(e) {
     replaceRE: i
   };
 }
-function De(e, t) {
-  const n = Fe(Object.assign({}, {
+function Fe(e, t) {
+  const n = De(Object.assign({}, {
     defs: {},
     shortcuts: {},
     enabled: []
@@ -2162,7 +2162,7 @@ function Ne(e) {
   }
   return t;
 }
-const Oe = /\B:([a-z0-9_+\-]+)$/, D = 8, E = {
+const Oe = /\B:([a-z0-9_+\-]+)$/, F = 8, E = {
   open: !1,
   partial: "",
   matches: [],
@@ -2170,14 +2170,14 @@ const Oe = /\B:([a-z0-9_+\-]+)$/, D = 8, E = {
   dismissedFor: "",
   from: 0,
   to: 0
-}, $ = new F("emoji-autocomplete");
+}, $ = new D("emoji-autocomplete");
 function Le(e) {
   const t = [];
   for (const o of V)
-    if (o.startsWith(e) && t.push(o), t.length >= D) return t;
-  if (t.length < D) {
+    if (o.startsWith(e) && t.push(o), t.length >= F) return t;
+  if (t.length < F) {
     for (const o of V)
-      if (!t.includes(o) && (o.includes(e) && t.push(o), t.length >= D))
+      if (!t.includes(o) && (o.includes(e) && t.push(o), t.length >= F))
         break;
   }
   return t;
@@ -2210,7 +2210,7 @@ function K(e, t) {
 }
 function ce(e, t, o) {
   const n = `:${t}: `, a = e.state.tr.insertText(n, o.from, o.to), s = o.from + n.length;
-  a.setSelection(y.create(a.doc, s)), e.dispatch(a);
+  a.setSelection(w.create(a.doc, s)), e.dispatch(a);
 }
 function Pe() {
   return new v({
@@ -2333,7 +2333,7 @@ function We() {
         if (i < 0) return !1;
         const r = i + s;
         return r > e.state.doc.content.size ? !1 : (o.preventDefault(), e.dispatch(
-          e.state.tr.setSelection(y.create(e.state.doc, r))
+          e.state.tr.setSelection(w.create(e.state.doc, r))
         ), e.focus(), !0);
       }
     }
@@ -2348,7 +2348,7 @@ const Ge = (e) => {
   // text in md (no escape needed for `:`), so serialization is automatic.
   // `bare` installs the core replacement rule with only the shortcode table
   // (no `:)`-style shortcuts; those must stay plain text).
-  mdItPlugins: [(e) => e.use(De, { defs: H, shortcuts: {} })],
+  mdItPlugins: [(e) => e.use(Fe, { defs: H, shortcuts: {} })],
   // Fallback for the legacy per-token load path: keep the source spelling.
   // 依赖 `shortcuts: {}`：shortcut 的 markup 是规范名而非源码短码，若启用
   // shortcuts 这里会把 `:)` 改写成 `:smile:`。
@@ -2464,7 +2464,7 @@ function at(e) {
     r.env.footnotes.refs[`:${p}`] = -1;
     const h = new r.Token("footnote_reference_open", "", 1);
     h.meta = { label: p }, h.level = r.level++, r.tokens.push(h);
-    const f = r.bMarks[c], b = r.tShift[c], x = r.sCount[c], w = r.parentType, k = d, C = r.sCount[c] + d - (r.bMarks[c] + r.tShift[c]);
+    const f = r.bMarks[c], b = r.tShift[c], x = r.sCount[c], y = r.parentType, k = d, C = r.sCount[c] + d - (r.bMarks[c] + r.tShift[c]);
     let A = C;
     for (; d < m; ) {
       const U = r.src.charCodeAt(d);
@@ -2474,7 +2474,7 @@ function at(e) {
         break;
       d++;
     }
-    r.tShift[c] = d - k, r.sCount[c] = A - C, r.bMarks[c] = k, r.blkIndent += 4, r.parentType = "footnote", r.sCount[c] < r.blkIndent && (r.sCount[c] += r.blkIndent), r.md.block.tokenize(r, c, l, !0), r.parentType = w, r.blkIndent -= 4, r.tShift[c] = b, r.sCount[c] = x, r.bMarks[c] = f;
+    r.tShift[c] = d - k, r.sCount[c] = A - C, r.bMarks[c] = k, r.blkIndent += 4, r.parentType = "footnote", r.sCount[c] < r.blkIndent && (r.sCount[c] += r.blkIndent), r.md.block.tokenize(r, c, l, !0), r.parentType = y, r.blkIndent -= 4, r.tShift[c] = b, r.sCount[c] = x, r.bMarks[c] = f;
     const G = new r.Token("footnote_reference_close", "", -1);
     return G.level = --r.level, r.tokens.push(G), !0;
   }
@@ -2537,8 +2537,8 @@ function at(e) {
       const f = new r.Token("footnote_open", "", 1);
       if (f.meta = { id: p, label: d[p].label }, r.tokens.push(f), d[p].tokens) {
         c = [];
-        const w = new r.Token("paragraph_open", "p", 1);
-        w.block = !0, c.push(w);
+        const y = new r.Token("paragraph_open", "p", 1);
+        y.block = !0, c.push(y);
         const k = new r.Token("inline", "", 0);
         k.children = d[p].tokens, k.content = d[p].content, c.push(k);
         const C = new r.Token("paragraph_close", "p", -1);
@@ -2548,9 +2548,9 @@ function at(e) {
       let b;
       r.tokens[r.tokens.length - 1].type === "paragraph_close" ? b = r.tokens.pop() : b = null;
       const x = d[p].count > 0 ? d[p].count : 1;
-      for (let w = 0; w < x; w++) {
+      for (let y = 0; y < x; y++) {
         const k = new r.Token("footnote_anchor", "", 0);
-        k.meta = { id: p, subId: w, label: d[p].label }, r.tokens.push(k);
+        k.meta = { id: p, subId: y, label: d[p].label }, r.tokens.push(k);
       }
       b && r.tokens.push(b), r.tokens.push(new r.Token("footnote_close", "", -1));
     }
@@ -2667,7 +2667,7 @@ function ct(e, t) {
 }
 function ut(e, t) {
   let o = -1;
-  e.state.doc.descendants((n, a) => n.type.name === "paragraph" && n.textContent.startsWith(`[^${t}]:`) ? (o = a + n.nodeSize - 1, !1) : !0), !(o < 0) && e.dispatch(e.state.tr.setSelection(y.near(e.state.doc.resolve(o))).scrollIntoView());
+  e.state.doc.descendants((n, a) => n.type.name === "paragraph" && n.textContent.startsWith(`[^${t}]:`) ? (o = a + n.nodeSize - 1, !1) : !0), !(o < 0) && e.dispatch(e.state.tr.setSelection(w.near(e.state.doc.resolve(o))).scrollIntoView());
 }
 function _t(e, t) {
   const o = e.state.schema.marks.footnote_ref;
@@ -2675,7 +2675,7 @@ function _t(e, t) {
   e.state.doc.descendants((a, s) => {
     const i = a.text;
     return i && a.isText && a.marks.some((r) => r.type === o && r.attrs.id === t) ? (n = s + i.length, !1) : !0;
-  }), !(n < 0) && (e.dispatch(e.state.tr.setSelection(y.create(e.state.doc, n)).scrollIntoView()), e.focus());
+  }), !(n < 0) && (e.dispatch(e.state.tr.setSelection(w.create(e.state.doc, n)).scrollIntoView()), e.focus());
 }
 function mt() {
   return new v({
@@ -2822,7 +2822,7 @@ const dt = {
   ]
 }, z = "headingTypeIndicator_focus";
 function ft(e) {
-  const t = new F("headingTypeIndicator");
+  const t = new D("headingTypeIndicator");
   let o = !1;
   return new v({
     key: t,
@@ -2879,7 +2879,7 @@ const gt = {
   labelKey: "highlight.label",
   icon: "highlighter",
   order: 3
-}, wt = [
+}, yt = [
   "#f7d54e",
   // yellow
   "#a3e07a",
@@ -2892,13 +2892,13 @@ const gt = {
   // orange
   "#c9a7eb"
   // purple
-], yt = wt[0], R = "texto-plugin-highlight-color";
+], wt = yt[0], R = "texto-plugin-highlight-color";
 function xt(e) {
   const t = `color-mix(in oklab, ${e} 35%, transparent)`, o = `color-mix(in oklab, ${e} 50%, transparent)`;
   return `:root{--highlight-color:${t}}:root.dark{--highlight-color:${o}}`;
 }
 function vt(e) {
-  const t = typeof e == "string" && /^#[0-9a-fA-F]{6}$/.test(e) ? e : yt;
+  const t = typeof e == "string" && /^#[0-9a-fA-F]{6}$/.test(e) ? e : wt;
   let o = document.getElementById(R);
   return o || (o = document.createElement("style"), o.id = R, document.head.appendChild(o)), o.textContent = xt(t), {
     dispose() {
@@ -3182,7 +3182,7 @@ function ee(e, t) {
       continue;
     }
     I(t, n, l), I(t, p, h);
-    const x = l - n, w = h - p;
+    const x = l - n, y = h - p;
     o.push({
       type: "html_inline",
       from: f,
@@ -3191,7 +3191,7 @@ function ee(e, t) {
       openTo: l,
       closeFrom: p,
       closeTo: h,
-      attrs: { tag: r, htmlAttrs: m, openLen: x, closeLen: w }
+      attrs: { tag: r, htmlAttrs: m, openLen: x, closeLen: y }
     }), n = h;
   }
   return o;
@@ -3223,7 +3223,7 @@ function It() {
           const s = document.createElement("div");
           s.className = "html-block-render", s.contentEditable = "false", s.style.display = "none", n.appendChild(s);
           let i = null, r = !1, c = e;
-          return Promise.resolve().then(() => vn).then(({ createHtmlBlockView: l }) => {
+          return Promise.resolve().then(() => $n).then(({ createHtmlBlockView: l }) => {
             r || (i = l({ dom: n, contentDOM: a, renderContainer: s, view: t, getPos: o, node: c }), i.update(c));
           }).catch(() => {
           }), {
@@ -3247,8 +3247,8 @@ function It() {
     }
   });
 }
-function Ft() {
-  const e = new F("htmlBlockSelectionWatcher");
+function Dt() {
+  const e = new D("htmlBlockSelectionWatcher");
   return new v({
     key: e,
     view: () => ({
@@ -3259,7 +3259,7 @@ function Ft() {
     })
   });
 }
-const Dt = {
+const Ft = {
   name: "html-block",
   nodes: {
     html_block: {
@@ -3286,7 +3286,7 @@ const Dt = {
   plugins: (e) => [
     jt(e).plugin,
     It(),
-    Ft()
+    Dt()
   ],
   keymap: (e) => ({
     Enter: (t, o) => {
@@ -3299,7 +3299,7 @@ const Dt = {
       if (o) {
         const r = i.tag === "!" ? "<!--" : s.textContent.trim(), c = i.tag === "!" ? "-->" : `</${i.tag}>`, l = a.before(), _ = e.nodes.html_block.create(null, e.text(r + `
 ` + c)), u = t.tr.replaceWith(l, l + s.nodeSize, _);
-        u.setSelection(y.create(u.doc, l + 1 + r.length + 1)), o(u);
+        u.setSelection(w.create(u.doc, l + 1 + r.length + 1)), o(u);
       }
       return !0;
     },
@@ -3331,14 +3331,14 @@ const Dt = {
             const p = t.schema.nodes.paragraph.create();
             u.insert(m, p);
           }
-          u.setSelection(y.create(u.doc, m + 1)), o(u);
+          u.setSelection(w.create(u.doc, m + 1)), o(u);
         }
         return !0;
       }
       if (!a.parent.isTextblock || a.parent.textContent.slice(a.parentOffset).includes(`
 `)) return !1;
       const c = t.doc.nodeAt(a.after());
-      return !c || c.type !== s || c.textContent.trim() === "" ? !1 : (o && o(t.tr.setSelection(y.create(t.tr.doc, a.after() + 1))), !0);
+      return !c || c.type !== s || c.textContent.trim() === "" ? !1 : (o && o(t.tr.setSelection(w.create(t.tr.doc, a.after() + 1))), !0);
     },
     ArrowUp: (t, o) => {
       const n = t.selection;
@@ -3347,7 +3347,7 @@ const Dt = {
       if (!a.parent.isTextblock || a.parent.textContent.slice(0, a.parentOffset).includes(`
 `)) return !1;
       const l = t.doc.resolve(a.before()).nodeBefore;
-      return !l || l.type !== s || l.textContent.trim() === "" ? !1 : (o && o(t.tr.setSelection(y.create(t.tr.doc, a.before() - 1))), !0);
+      return !l || l.type !== s || l.textContent.trim() === "" ? !1 : (o && o(t.tr.setSelection(w.create(t.tr.doc, a.before() - 1))), !0);
     }
   }),
   parserTokens: {
@@ -3493,7 +3493,7 @@ const Rt = {
   id: "html",
   register: ({ editor: e }) => [
     e.registerSyntaxFeature(Ot),
-    e.registerSyntaxFeature(Dt),
+    e.registerSyntaxFeature(Ft),
     e.registerSyntaxFeature(Nt),
     e.registerSyntaxFeature(Rt)
   ]
@@ -3511,8 +3511,28 @@ const Rt = {
     if (t)
       return navigator.clipboard.writeText(t.textContent);
   }
+}, Ht = [["path", "M18 7V4H6l6 8-6 8h12v-3"]], Wt = {
+  // 裸 slug：宿主按 id 去重，且与快捷键/命令分发保持一致。
+  id: "math.insert",
+  keyword: "math",
+  labelKey: "math.mathBlock",
+  descriptionKey: "math.mathBlockDesc",
+  icon: Ht,
+  defaultShortcut: "Cmd+Shift+M",
+  category: "paragraph",
+  order: 3,
+  insert(e) {
+    const o = e.state.schema.nodes.code_block;
+    if (!o) return;
+    const { $from: n } = e.state.selection, a = e.state.tr.replaceWith(
+      n.before(),
+      n.after(),
+      o.create({ lang: "latex" })
+    );
+    e.dispatch(a), e.focus();
+  }
 };
-function Ht(e) {
+function Gt(e) {
   const t = document.createElement("div");
   t.className = "math-preview";
   let o = 0;
@@ -3547,7 +3567,7 @@ const ne = {
 function W(e) {
   return Object.prototype.hasOwnProperty.call(ne, e) ? ne[e] : null;
 }
-function Wt({
+function Ut({
   text: e,
   pos: t,
   token: o
@@ -3582,7 +3602,7 @@ function Wt({
     { pos: l, when: "outside", kind: "math-render", attrs: { latex: u }, side: -1 }
   ]), m;
 }
-function Gt(e, t, o) {
+function Vt(e, t, o) {
   if (o.type !== "math_inline") return null;
   const n = W(o.markup);
   if (!n || !e.startsWith(o.markup, t)) return null;
@@ -3591,11 +3611,11 @@ function Gt(e, t, o) {
   const s = a + o.content.length;
   return e.startsWith(n.close, s) ? s + n.close.length - t : null;
 }
-function Ut(e) {
+function Kt(e) {
   const t = [];
   for (const o of e.tokens) {
     if (o.token.type !== "math_inline" || !o.exact) continue;
-    const n = Wt({
+    const n = Ut({
       text: e.text,
       pos: o.pos,
       token: o.token
@@ -3630,7 +3650,7 @@ typeof window < "u" && !customElements.get("math-jax") && customElements.define(
     }
   }
 );
-const oe = /* @__PURE__ */ new Map(), Vt = "v1";
+const oe = /* @__PURE__ */ new Map(), Zt = "v1";
 let j = null;
 function re() {
   return j || (j = new IntersectionObserver(
@@ -3638,7 +3658,7 @@ function re() {
       e.forEach((t) => {
         if (t.isIntersecting) {
           const o = t.target, n = o.getAttribute("data-formula");
-          n && !o.hasAttribute("data-rendered") && (o.setAttribute("data-rendered", "true"), Kt(n).then((a) => {
+          n && !o.hasAttribute("data-rendered") && (o.setAttribute("data-rendered", "true"), Xt(n).then((a) => {
             a && o.isConnected ? o.innerHTML = a : o.isConnected && (o.textContent = n);
           })), j?.unobserve(o);
         }
@@ -3647,8 +3667,8 @@ function re() {
     { root: null, rootMargin: "100px", threshold: 0 }
   )), j;
 }
-async function Kt(e) {
-  const t = `${Vt}:${e}`, o = oe.get(t);
+async function Xt(e) {
+  const t = `${Zt}:${e}`, o = oe.get(t);
   if (o) return o;
   try {
     const n = await ae(e, {
@@ -3663,12 +3683,12 @@ async function Kt(e) {
     return console.error("Math render error:", n), null;
   }
 }
-function Zt(e) {
+function Jt(e) {
   const t = document.createElement("math-jax");
   return t.setAttribute("latex", e), t.setAttribute("data-formula", e), t.setAttribute("contenteditable", "false"), t.textContent = e, t;
 }
-const Xt = (e) => {
-  const t = Zt(e.latex ?? "");
+const Yt = (e) => {
+  const t = Jt(e.latex ?? "");
   return t.setAttribute("data-render", "1"), t;
 };
 function de(e) {
@@ -3917,7 +3937,7 @@ g.rules = {
     ]
   }
 };
-function Jt(e) {
+function Qt(e) {
   e.use(g, {
     engine: { renderToString: (t) => t },
     delimiters: "dollars"
@@ -3925,7 +3945,7 @@ function Jt(e) {
   for (const t of g.rules.brackets.inline)
     e.inline.ruler.before("escape", t.name, g.inline(t));
 }
-const Yt = {
+const en = {
   name: "inline-math",
   marks: {
     inline_math: {
@@ -3941,7 +3961,7 @@ const Yt = {
   // `dollars` 覆盖 `$…$`，`brackets` 覆盖 `\(…\)`：两条规则都产出
   // `math_inline`（markup 分别是 `$` / `\(`），定位层按 `tokenAdvance` 认领源码宽度。
   // 规则注册（含「brackets 只取 inline」的理由）见 `md-rules.ts`。
-  mdItPlugins: [Jt],
+  mdItPlugins: [Qt],
   parserTokens: {
     math_inline: (e, t, o) => {
       const n = t.content;
@@ -3961,30 +3981,31 @@ const Yt = {
   },
   inline: {
     order: -1,
-    derive: Ut,
-    tokenAdvance: Gt,
+    derive: Kt,
+    tokenAdvance: Vt,
     markNames: ["inline_math"],
     extRanges: (e) => M(e, "inline_math", 1, 1),
     suppressFormatToolbar: !0,
     decorationWidgets: {
-      "math-render": Xt
+      "math-render": Yt
     }
   }
-}, Qt = ["latex", "math"], en = {
+}, tn = ["latex", "math"], nn = {
   id: "math",
   register: ({ editor: e }) => [
-    e.registerSyntaxFeature(Yt),
+    e.registerSyntaxFeature(en),
     e.registerExtension(
       he({
         id: "math.renderer",
-        languages: Qt,
-        createPreview: Ht
+        languages: tn,
+        createPreview: Gt
       })
     ),
+    e.registerInsertCommand(Wt),
     e.registerContextMenuItem(Bt)
   ]
-}, tn = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/g;
-function nn(e, t) {
+}, on = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/g;
+function rn(e, t) {
   const o = e.posMax, n = e.pos;
   if (e.src.charCodeAt(n) !== 126 || t || n + 2 >= o)
     return !1;
@@ -4006,15 +4027,15 @@ function nn(e, t) {
   const i = e.push("sub_open", "sub", 1);
   i.markup = "~";
   const r = e.push("text", "", 0);
-  r.content = s.replace(tn, "$1");
+  r.content = s.replace(on, "$1");
   const c = e.push("sub_close", "sub", -1);
   return c.markup = "~", e.pos = e.posMax + 1, e.posMax = o, !0;
 }
-function on(e) {
-  e.inline.ruler.after("emphasis", "sub", nn);
+function an(e) {
+  e.inline.ruler.after("emphasis", "sub", rn);
 }
-const rn = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/g;
-function an(e, t) {
+const sn = /\\([ \\!"#$%&'()*+,./:;<=>?@[\]^_`{|}~-])/g;
+function ln(e, t) {
   const o = e.posMax, n = e.pos;
   if (e.src.charCodeAt(n) !== 94 || t || n + 2 >= o)
     return !1;
@@ -4036,14 +4057,14 @@ function an(e, t) {
   const i = e.push("sup_open", "sup", 1);
   i.markup = "^";
   const r = e.push("text", "", 0);
-  r.content = s.replace(rn, "$1");
+  r.content = s.replace(sn, "$1");
   const c = e.push("sup_close", "sup", -1);
   return c.markup = "^", e.pos = e.posMax + 1, e.posMax = o, !0;
 }
-function sn(e) {
-  e.inline.ruler.after("emphasis", "sup", an);
+function cn(e) {
+  e.inline.ruler.after("emphasis", "sup", ln);
 }
-const ln = {
+const un = {
   name: "sub-sup",
   marks: {
     sub: {
@@ -4055,7 +4076,7 @@ const ln = {
       toDOM: () => ["sup", 0]
     }
   },
-  mdItPlugins: [(e) => e.use(on).use(sn)],
+  mdItPlugins: [(e) => e.use(an).use(cn)],
   // 源码组装失败时的逐 token 回退路径（parser.ts 的 handleInline）：
   // 与 strike / highlight 的 s_* / mark_* 同构，分隔符取自 tok.markup。
   parserTokens: {
@@ -4088,11 +4109,11 @@ const ln = {
       ...M(e, "sup", 1)
     ]
   }
-}, cn = {
+}, _n = {
   id: "subSup",
-  register: ({ editor: e }) => [e.registerSyntaxFeature(ln)]
+  register: ({ editor: e }) => [e.registerSyntaxFeature(un)]
 }, P = /* @__PURE__ */ new Set();
-class un {
+class mn {
   dom;
   view;
   // Cache the last rendered (doc, items) so the refresh plugin bails out fast
@@ -4136,7 +4157,7 @@ class un {
   }
   jumpTo(t) {
     const o = this.view.state.tr;
-    o.setSelection(y.near(o.doc.resolve(t + 1))), this.view.dispatch(o), this.view.nodeDOM(t)?.scrollIntoView({ block: "start", behavior: "smooth" }), this.view.focus();
+    o.setSelection(w.near(o.doc.resolve(t + 1))), this.view.dispatch(o), this.view.nodeDOM(t)?.scrollIntoView({ block: "start", behavior: "smooth" }), this.view.focus();
   }
   // The node never changes (atom, no attrs/content); the refresh plugin calls
   // render() externally. Returning true tells PM "we handled it".
@@ -4154,7 +4175,7 @@ class un {
     return !0;
   }
 }
-function _n() {
+function dn() {
   return new v({
     view() {
       const e = () => {
@@ -4168,7 +4189,7 @@ function _n() {
     }
   });
 }
-const mn = {
+const pn = {
   name: "toc",
   nodes: {
     toc: {
@@ -4182,11 +4203,11 @@ const mn = {
     }
   },
   plugins: () => [
-    _n(),
+    dn(),
     new v({
       props: {
         nodeViews: {
-          toc: (e, t) => new un(e, t)
+          toc: (e, t) => new mn(e, t)
         }
       }
     })
@@ -4207,7 +4228,7 @@ const mn = {
           s.nodes.paragraph.create()
         ]);
         const _ = r + i.nodeSize + 1;
-        l.setSelection(y.create(l.doc, _)), t(l);
+        l.setSelection(w.create(l.doc, _)), t(l);
       }
       return !0;
     }
@@ -4225,10 +4246,10 @@ const mn = {
       e.write("[toc]"), e.closeBlock(t);
     }
   }
-}, dn = {
+}, fn = {
   id: "toc",
-  register: ({ editor: e }) => [e.registerSyntaxFeature(mn)]
-}, pn = {
+  register: ({ editor: e }) => [e.registerSyntaxFeature(pn)]
+}, hn = {
   id: "underline",
   markName: "underline",
   delim: "<u>",
@@ -4238,7 +4259,7 @@ const mn = {
   icon: "underline",
   order: 4
 };
-function fn(e, t) {
+function gn(e, t) {
   const o = [], a = "</u>";
   for (let s = 0; s < e.length; ) {
     if (t[s] || !e.startsWith("<u>", s)) {
@@ -4267,7 +4288,7 @@ function fn(e, t) {
   }
   return o;
 }
-function hn() {
+function bn() {
   return (e, t) => {
     const { from: o, to: n, empty: a } = e.selection;
     if (a) return !1;
@@ -4276,12 +4297,12 @@ function hn() {
       return t && t(e.tr.delete(n, n + l).delete(o - c, o)), !0;
     if (t) {
       const m = s.textBetween(o, n), d = e.tr.replaceWith(o, n, e.schema.text(i + m + r));
-      d.setSelection(y.create(d.doc, o + c, o + c + m.length)), t(d);
+      d.setSelection(w.create(d.doc, o + c, o + c + m.length)), t(d);
     }
     return !0;
   };
 }
-const gn = {
+const kn = {
   name: "underline",
   marks: {
     underline: {
@@ -4294,32 +4315,32 @@ const gn = {
   },
   inline: {
     order: 1,
-    derive: (e) => fn(e.text, e.consumed),
+    derive: (e) => gn(e.text, e.consumed),
     markNames: ["underline"],
     extRanges: (e) => M(e, "underline", 3, 4)
   },
   keymap: () => ({
-    "Mod-u": hn()
+    "Mod-u": bn()
   })
-}, bn = {
+}, yn = {
   id: "underline",
   register: ({ editor: e }) => [
-    e.registerSyntaxFeature(gn),
-    e.registerFormatToolbarItem(pn)
+    e.registerSyntaxFeature(kn),
+    e.registerFormatToolbarItem(hn)
   ]
-}, kn = [
+}, wn = [
   ve,
-  cn,
-  bn,
+  _n,
+  yn,
   Ve,
   Ae,
   bt,
-  dn,
+  fn,
   St,
   Lt,
-  en,
+  nn,
   pt
-], wn = "en-US", yn = {
+], xn = "en-US", vn = {
   "en-US": {
     name: "Markdown Extensions",
     description: "Editor-native Markdown syntax extensions packaged as a single plugin.",
@@ -4367,7 +4388,9 @@ const gn = {
     math: {
       label: "Math",
       description: "Render LaTeX math formulas inline and in fenced code blocks",
-      copyLatex: "Copy LaTeX Source"
+      copyLatex: "Copy LaTeX Source",
+      mathBlock: "Math Block",
+      mathBlockDesc: "Insert math block"
     },
     footnote: {
       label: "Footnote",
@@ -4421,7 +4444,9 @@ const gn = {
     math: {
       label: "数学公式",
       description: "渲染行内与代码块中的 LaTeX 数学公式",
-      copyLatex: "复制 LaTeX 源码"
+      copyLatex: "复制 LaTeX 源码",
+      mathBlock: "数学公式",
+      mathBlockDesc: "插入数学公式块"
     },
     footnote: {
       label: "脚注",
@@ -4429,10 +4454,10 @@ const gn = {
     }
   }
 };
-class Mn extends ge {
+class qn extends ge {
   featureResources = [];
   onload() {
-    this.addMessages(yn, wn), this.syncFeatures(), this.disposables.add(this.settings.onDidChange(() => this.syncFeatures()));
+    this.addMessages(vn, xn), this.syncFeatures(), this.disposables.add(this.settings.onDidChange(() => this.syncFeatures()));
   }
   onunload() {
     this.disposeFeatures();
@@ -4440,7 +4465,7 @@ class Mn extends ge {
   /** 按当前设置重装特性：先全部释放，再装配启用项。 */
   syncFeatures() {
     this.disposeFeatures();
-    for (const t of kn)
+    for (const t of wn)
       if (this.settings.get(t.id) !== !1)
         try {
           const o = t.register({
@@ -4463,7 +4488,7 @@ class Mn extends ge {
     this.featureResources = [];
   }
 }
-function xn(e) {
+function Tn(e) {
   const { dom: t, contentDOM: o, renderContainer: n, view: a, getPos: s } = e;
   let i = e.node, r = "code", c = null;
   const l = (f) => {
@@ -4475,8 +4500,8 @@ function xn(e) {
     f.preventDefault();
     const b = s();
     if (b == null) return;
-    const x = b + 1, w = a.state.tr.setSelection(y.create(a.state.doc, x)).scrollIntoView();
-    a.dispatch(w), a.focus();
+    const x = b + 1, y = a.state.tr.setSelection(w.create(a.state.doc, x)).scrollIntoView();
+    a.dispatch(y), a.focus();
   };
   n.addEventListener("mousedown", l);
   const _ = () => {
@@ -4514,10 +4539,10 @@ function xn(e) {
     }
   };
 }
-const vn = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const $n = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  createHtmlBlockView: xn
+  createHtmlBlockView: Tn
 }, Symbol.toStringTag, { value: "Module" }));
 export {
-  Mn as default
+  qn as default
 };
