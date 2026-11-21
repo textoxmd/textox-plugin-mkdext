@@ -1,0 +1,21 @@
+{
+  "name": "textox-plugin-mkdext",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Markdown syntax extensions for Textox",
+  "scripts": {
+    "build": "texto-plugin build .",
+    "pack": "texto-plugin pack .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@textox/plugin-sdk": "file:../../../.local/share/opencode/worktree/d6707f/plugin-unification-p1/vendor/plugin-sdk"
+  },
+  "devDependencies": {
+    "@textox/plugin-build": "file:../../Textox/packages/plugin-build",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}

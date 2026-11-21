@@ -1,0 +1,64 @@
+/* GFM Alert Styles — applied via Decoration.node class on blockquotes */
+.texto-editor .ProseMirror blockquote.alert {
+  border-left: 3px solid var(--alert-border) !important;
+  border-radius: 0;
+  padding: 0.6em 0 0.6em 1.2em;
+  margin: 0.6em 0;
+  color: inherit;
+}
+
+/* override theme's first-child margin reset */
+.texto-editor .ProseMirror blockquote.alert > :first-child {
+  margin-top: 0.6em;
+}
+
+.texto-editor .ProseMirror blockquote.alert p + p {
+  margin-top: 0.5em;
+}
+
+.texto-editor .ProseMirror blockquote.alert .alert-label {
+  user-select: none;
+  font-weight: 600;
+  font-size: 0.85em;
+  color: var(--alert-border);
+}
+
+.texto-editor .ProseMirror blockquote.alert span.syntax-hidden {
+  display: none;
+}
+
+/* GitHub alert colors — light & dark */
+.texto-editor .ProseMirror blockquote.alert.alert-note {
+  --alert-border: #0969da;
+}
+.dark .texto-editor .ProseMirror blockquote.alert.alert-note {
+  --alert-border: #58a6ff;
+}
+
+.texto-editor .ProseMirror blockquote.alert.alert-tip {
+  --alert-border: #1a7f37;
+}
+.dark .texto-editor .ProseMirror blockquote.alert.alert-tip {
+  --alert-border: #3fb950;
+}
+
+.texto-editor .ProseMirror blockquote.alert.alert-important {
+  --alert-border: #8250df;
+}
+.dark .texto-editor .ProseMirror blockquote.alert.alert-important {
+  --alert-border: #d2a8ff;
+}
+
+.texto-editor .ProseMirror blockquote.alert.alert-warning {
+  --alert-border: #9a6700;
+}
+.dark .texto-editor .ProseMirror blockquote.alert.alert-warning {
+  --alert-border: #d29922;
+}
+
+.texto-editor .ProseMirror blockquote.alert.alert-caution {
+  --alert-border: #cf222e;
+}
+.dark .texto-editor .ProseMirror blockquote.alert.alert-caution {
+  --alert-border: #f85149;
+}
