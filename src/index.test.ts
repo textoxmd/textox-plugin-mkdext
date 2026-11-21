@@ -126,4 +126,52 @@ describe('MkdextPlugin 特性装配', () => {
 
     expect(disposable.dispose).toHaveBeenCalledTimes(1);
   });
+
+  it('仅切换 view 显示偏好时不重装特性', () => {
+    const { app } = createApp({ alert: true, view: 'panel' });
+    const plugin = new MkdextPlugin(app, manifest);
+    plugin.onload();
+
+    const disposable = vi.mocked(app.editor.registerSyntaxFeature).mock.results[0]?.value as {
+      dispose: () => void;
+    };
+    expect(app.editor.registerSyntaxFeature).toHaveBeenCalledTimes(1);
+
+    app.settings.set('view', 'source');
+
+    expect(app.editor.registerSyntaxFeature).toHaveBeenCalledTimes(1);
+    expect(disposable.dispose).not.toHaveBeenCalled();
+  });
+
+  it('特性开关变化时重装，被关掉的特性资源被释放', () => {
+    const { app } = createApp({ alert: true, math: true });
+    const plugin = new MkdextPlugin(app, manifest);
+    plugin.onload();
+    expect(app.editor.registerSyntaxFeature).toHaveBeenCalledTimes(2);
+
+    const alertResource = vi.mocked(app.editor.registerSyntaxFeature).mock.results[0]?.value as {
+      dispose: () => void;
+    };
+    app.settings.set('alert', false);
+
+    expect(alertResource.dispose).toHaveBeenCalledTimes(1);
+    // 剩余特性（math）重装后重新注册，因此总数增加而不是归零。
+    expect(app.editor.registerSyntaxFeature).toHaveBeenCalledTimes(3);
+  });
+
+  it('高亮颜色变化时重装特性以重新应用样式', () => {
+    const { app } = createApp({ alert: true, highlight: true, highlightColor: '#ffd400' });
+    const plugin = new MkdextPlugin(app, manifest);
+    plugin.onload();
+    expect(app.editor.registerSyntaxFeature).toHaveBeenCalledTimes(2);
+
+    const results = vi.mocked(app.editor.registerSyntaxFeature).mock.results;
+    const alertResource = results[0]?.value as { dispose: () => void };
+    const highlightResource = results[1]?.value as { dispose: () => void };
+    app.settings.set('highlightColor', '#00ff00');
+
+    expect(alertResource.dispose).toHaveBeenCalledTimes(1);
+    expect(highlightResource.dispose).toHaveBeenCalledTimes(1);
+    expect(app.editor.registerSyntaxFeature).toHaveBeenCalledTimes(4);
+  });
 });

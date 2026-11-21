@@ -10325,20 +10325,20 @@ function Cf() {
 }
 var If = Cf();
 const Of = /* @__PURE__ */ bf(If), {
-  Type: Oy,
-  Schema: jy,
-  FAILSAFE_SCHEMA: Sy,
+  Type: jy,
+  Schema: Sy,
+  FAILSAFE_SCHEMA: Ty,
   JSON_SCHEMA: jf,
-  CORE_SCHEMA: Ty,
-  DEFAULT_SCHEMA: By,
+  CORE_SCHEMA: By,
+  DEFAULT_SCHEMA: Dy,
   load: Sf,
-  loadAll: Dy,
-  dump: zy,
-  YAMLException: Wy,
-  types: Vy,
-  safeLoad: Ry,
-  safeLoadAll: Py,
-  safeDump: Fy
+  loadAll: zy,
+  dump: Wy,
+  YAMLException: Vy,
+  types: Ry,
+  safeLoad: Py,
+  safeLoadAll: Fy,
+  safeDump: Hy
 } = Of, Tf = /^([^#\s][^:\n]*?):(?:[ \t](.*))?$/, Bf = /^\d{4}-\d{2}-\d{2}$/, Df = /^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}/;
 function ai(e) {
   return e.startsWith(" ") || e.startsWith("	");
@@ -11606,7 +11606,7 @@ function j2() {
           const c = document.createElement("div");
           c.className = "html-block-render", c.contentEditable = "false", c.style.display = "none", i.appendChild(c);
           let d = null, u = !1, p = e;
-          return Promise.resolve().then(() => _y).then(({ createHtmlBlockView: t }) => {
+          return Promise.resolve().then(() => Ay).then(({ createHtmlBlockView: t }) => {
             u || (d = t({ dom: i, contentDOM: n, renderContainer: c, view: a, getPos: s, node: p }), d.update(p));
           }).catch(() => {
           }), {
@@ -12869,30 +12869,43 @@ const gy = {
       invalidYaml: "YAML 无效 — 请切换到源码编辑"
     }
   }
-};
-class qy extends As {
+}, Ly = /* @__PURE__ */ new Set(["view"]);
+class Yy extends As {
   featureResources = [];
+  /** 上次装配时的设置签名；显示偏好变化不参与比较。 */
+  lastSettingsSignature = null;
   onload() {
     this.addMessages(My, xy), this.syncFeatures(), this.disposables.add(this.settings.onDidChange(() => this.syncFeatures()));
   }
   onunload() {
-    this.disposeFeatures();
+    this.disposeFeatures(), this.lastSettingsSignature = null;
   }
   /** 按当前设置重装特性：先全部释放，再装配启用项。 */
   syncFeatures() {
-    this.disposeFeatures();
-    for (const a of ky)
-      if (this.settings.get(a.id) !== !1)
-        try {
-          const s = a.register({
-            editor: this.app.editor,
-            settings: this.settings,
-            t: (i) => this.t(i)
-          });
-          this.featureResources.push(...Array.isArray(s) ? s : [s]);
-        } catch (s) {
-          this.app.log.error(`feature ${a.id} failed to load`, s);
-        }
+    const a = this.settingsSignature();
+    if (a !== this.lastSettingsSignature) {
+      this.lastSettingsSignature = a, this.disposeFeatures();
+      for (const s of ky)
+        if (this.settings.get(s.id) !== !1)
+          try {
+            const i = s.register({
+              editor: this.app.editor,
+              settings: this.settings,
+              t: (n) => this.t(n)
+            });
+            this.featureResources.push(...Array.isArray(i) ? i : [i]);
+          } catch (i) {
+            this.app.log.error(`feature ${s.id} failed to load`, i);
+          }
+    }
+  }
+  /**
+   * 特性装配相关的设置签名：取全量配置、跳过纯显示偏好、按 key 排序，
+   * `undefined` 归一为 `null` 以免 `JSON.stringify` 丢键造成签名碰撞。
+   */
+  settingsSignature() {
+    const a = this.settings.all().values, s = Object.keys(a).filter((i) => !Ly.has(i)).sort().map((i) => [i, a[i] === void 0 ? null : a[i]]);
+    return JSON.stringify(s);
   }
   disposeFeatures() {
     for (const a of this.featureResources)
@@ -12904,7 +12917,7 @@ class qy extends As {
     this.featureResources = [];
   }
 }
-function Ly(e) {
+function _y(e) {
   const { dom: a, contentDOM: s, renderContainer: i, view: n, getPos: c } = e;
   let d = e.node, u = "code", p = null;
   const t = (v) => {
@@ -12955,10 +12968,10 @@ function Ly(e) {
     }
   };
 }
-const _y = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Ay = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  createHtmlBlockView: Ly
+  createHtmlBlockView: _y
 }, Symbol.toStringTag, { value: "Module" }));
 export {
-  qy as default
+  Yy as default
 };
