@@ -14,7 +14,7 @@
         "markdown-it-sup": "^2.0.0",
       },
       "devDependencies": {
-        "@textox/plugin-build": "file:../../Textox/packages/plugin-build",
+        "@textox/plugin-build": "^0.1.4",
         "@types/js-yaml": "^4.0.9",
         "@types/node": "^26.6.6",
         "happy-dom": "^17.4.4",
@@ -130,7 +130,7 @@
 
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.68.8", "https://mirrors.cloud.tencent.com/npm/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.68.8.tgz", { "os": "win32", "cpu": "x64" }, "sha512-/W1LBsMeQAdiCuH3Z2gkRspl3mlxL+butknhq4vXjmxO45vuT08BqhehxDoE4YS+m6s9lhpq6M9/PjTEAg8PYw=="],
 
-    "@textox/plugin-build": ["@textox/plugin-build@file:../../Textox/packages/plugin-build", { "dependencies": { "@textox/plugin-sdk": "^0.3.0", "fflate": "^0.8.2", "vite": "^6.0.3" }, "devDependencies": { "typescript": "^5.8.2", "vitest": "^3.1.2" }, "bin": { "texto-plugin": "./dist/cli.js" } }],
+    "@textox/plugin-build": ["@textox/plugin-build@0.1.4", "", { "dependencies": { "@textox/plugin-sdk": "^0.3.0", "fflate": "^0.8.2", "vite": "^6.0.3" }, "bin": { "texto-plugin": "dist/cli.js" } }, "sha512-ROXti/LvMjJ2jCbxYLKHKf8a1L9zVfsqupIZ6vyRW6SbSOnqpBCLdthvSHIbJQ6Rm3Zzo7MTRq1jQQU51O4mmg=="],
 
     "@textox/plugin-sdk": ["@textox/plugin-sdk@0.3.0", "", { "dependencies": { "@types/markdown-it": "^14.1.2", "highlight.js": "^11.11.1", "markdown-it": "^14.1.1", "prosemirror-inputrules": "^1.5.1", "prosemirror-model": "^1.25.4", "prosemirror-state": "^1.4.4", "prosemirror-view": "^1.41.6" } }, "sha512-SYjXwLd26420elMSRcP+OsoBt19KAjXtQQ3Kklf5rNQlIF0itqE4/ffXPks8xBevFhLRANLcW4KMJ4UmUwD0Lg=="],
 

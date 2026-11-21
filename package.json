@@ -20,7 +20,7 @@
     "markdown-it-sup": "^2.0.0"
   },
   "devDependencies": {
-    "@textox/plugin-build": "file:../../Textox/packages/plugin-build",
+    "@textox/plugin-build": "^0.1.4",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^26.6.6",
     "happy-dom": "^17.4.4",
