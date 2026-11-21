@@ -25,7 +25,7 @@ function makeSchema() {
 
 describe('mathInsert', () => {
   it('exposes metadata for toolbar / slash / shortcut', () => {
-    expect(mathInsert.id).toBe('math.insert');
+    expect(mathInsert.id).toBe('math_block');
     expect(mathInsert.keyword).toBe('math');
     expect(mathInsert.defaultShortcut).toBe('Cmd+Shift+M');
     expect((mathInsert.icon as IconDef).length).toBeGreaterThan(0);

@@ -3,8 +3,8 @@ import type { IconDef, InsertCommandMeta } from '@textox/plugin-sdk';
 const mathIcon: IconDef = [['path', 'M18 7V4H6l6 8-6 8h12v-3']];
 
 export const mathInsert: InsertCommandMeta = {
-  // 裸 slug：宿主按 id 去重，且与快捷键/命令分发保持一致。
-  id: 'math.insert',
+  // 裸 slug：宿主按 id 去重，且须与原生菜单项 / 快捷键 / 命令分发的 action id 一致。
+  id: 'math_block',
   keyword: 'math',
   labelKey: 'math.mathBlock',
   descriptionKey: 'math.mathBlockDesc',
