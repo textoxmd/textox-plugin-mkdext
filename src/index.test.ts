@@ -5,7 +5,16 @@ import MkdextPlugin from './index';
 
 /** 构造满足 `PluginApp` 的最小桩，设置读写走内存并手动触发变更。 */
 function createApp(initial: Record<string, unknown>) {
-  const values = { ...initial };
+  // 只装配被点名的特性：其余开关显式关掉（默认值语义由 `plugin.config.ts` 提供）。
+  const values: Record<string, unknown> = {
+    subSup: false,
+    underline: false,
+    emoji: false,
+    autoPair: false,
+    headingIndicator: false,
+    toc: false,
+    ...initial,
+  };
   const listeners = new Set<(snapshot: SettingsSnapshot) => void>();
   const snapshot = (): SettingsSnapshot => ({
     values: { ...values },
