@@ -22,6 +22,7 @@
   "devDependencies": {
     "@textox/plugin-build": "file:../../Textox/packages/plugin-build",
     "@types/js-yaml": "^4.0.9",
+    "@types/node": "^26.6.6",
     "happy-dom": "^17.4.4",
     "typescript": "^5.9.3",
     "vitest": "^3.2.7"
