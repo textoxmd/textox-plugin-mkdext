@@ -81,6 +81,76 @@
       "group": "editor",
       "groupLabelKey": "groups.editor",
       "apply": "immediate"
+    },
+    {
+      "key": "highlight",
+      "type": "boolean",
+      "labelKey": "highlight.label",
+      "descriptionKey": "highlight.description",
+      "default": true,
+      "group": "editor",
+      "groupLabelKey": "groups.editor",
+      "apply": "immediate"
+    },
+    {
+      "key": "highlightColor",
+      "type": "color",
+      "labelKey": "highlight.color.label",
+      "descriptionKey": "highlight.color.description",
+      "default": "#f7d54e",
+      "presets": [
+        {
+          "value": "#f7d54e"
+        },
+        {
+          "value": "#a3e07a"
+        },
+        {
+          "value": "#8ec5f2"
+        },
+        {
+          "value": "#f2a0c0"
+        },
+        {
+          "value": "#f7b267"
+        },
+        {
+          "value": "#c9a7eb"
+        }
+      ],
+      "group": "editor",
+      "groupLabelKey": "groups.editor",
+      "apply": "immediate"
+    },
+    {
+      "key": "html",
+      "type": "boolean",
+      "labelKey": "html.label",
+      "descriptionKey": "html.description",
+      "default": true,
+      "group": "editor",
+      "groupLabelKey": "groups.editor",
+      "apply": "immediate"
+    },
+    {
+      "key": "math",
+      "type": "boolean",
+      "labelKey": "math.label",
+      "descriptionKey": "math.description",
+      "default": true,
+      "group": "editor",
+      "groupLabelKey": "groups.editor",
+      "apply": "immediate"
+    },
+    {
+      "key": "footnote",
+      "type": "boolean",
+      "labelKey": "footnote.label",
+      "descriptionKey": "footnote.description",
+      "default": true,
+      "group": "editor",
+      "groupLabelKey": "groups.editor",
+      "apply": "immediate"
     }
   ],
   "builtAgainst": {

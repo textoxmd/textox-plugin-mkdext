@@ -13,6 +13,10 @@ function createApp(initial: Record<string, unknown>) {
     autoPair: false,
     headingIndicator: false,
     toc: false,
+    highlight: false,
+    html: false,
+    math: false,
+    footnote: false,
     ...initial,
   };
   const listeners = new Set<(snapshot: SettingsSnapshot) => void>();

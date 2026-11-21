@@ -7,6 +7,8 @@
       "dependencies": {
         "@textox/plugin-sdk": "file:../../../.local/share/opencode/worktree/d6707f/plugin-unification-p1/vendor/plugin-sdk",
         "markdown-it-emoji": "^3.0.0",
+        "markdown-it-footnote": "^4.0.0",
+        "markdown-it-mark": "^4.0.0",
         "markdown-it-sub": "^2.0.0",
         "markdown-it-sup": "^2.0.0",
       },
@@ -200,6 +202,10 @@
     "markdown-it": ["markdown-it@14.3.3", "https://mirrors.cloud.tencent.com/npm/markdown-it/-/markdown-it-14.3.3.tgz", { "dependencies": { "argparse": "^2.0.1", "entities": "^4.5.0", "linkify-it": "^5.0.2", "mdurl": "^2.0.0", "punycode.js": "^2.3.1", "uc.micro": "^2.1.0" }, "bin": { "markdown-it": "bin/markdown-it.mjs" } }, "sha512-L//tDAkjTjJCU6pBUSBTgs3Kg4InVaZuUZog/b6V12UKhcDQ7S78877ibbCanRExwPuYP1CZD7Gd2dxSy1GXRg=="],
 
     "markdown-it-emoji": ["markdown-it-emoji@3.1.0", "https://mirrors.cloud.tencent.com/npm/markdown-it-emoji/-/markdown-it-emoji-3.1.0.tgz", {}, "sha512-NhmMEH2ywduD4Nty1E8uB5NqfLhAT1VR0dyvoJyStKOqCzbZmVdn/+8wj7zpDsb/fLBikpCPsWwxqKlvMmbz4g=="],
+
+    "markdown-it-footnote": ["markdown-it-footnote@4.0.0", "https://mirrors.cloud.tencent.com/npm/markdown-it-footnote/-/markdown-it-footnote-4.0.0.tgz", {}, "sha512-WYJ7urf+khJYl3DqofQpYfEYkZKbmXmwxQV8c8mO/hGIhgZ1wOe7R4HLFNwqx7TjILbnC98fuyeSsin19JdFcQ=="],
+
+    "markdown-it-mark": ["markdown-it-mark@4.0.0", "https://mirrors.cloud.tencent.com/npm/markdown-it-mark/-/markdown-it-mark-4.0.0.tgz", {}, "sha512-YLhzaOsU9THO/cal0lUjfMjrqSMPjjyjChYM7oyj4DnyaXEzA8gnW6cVJeyCrCVeyesrY2PlEdUYJSPFYL4Nkg=="],
 
     "markdown-it-sub": ["markdown-it-sub@2.0.0", "https://mirrors.cloud.tencent.com/npm/markdown-it-sub/-/markdown-it-sub-2.0.0.tgz", {}, "sha512-iCBKgwCkfQBRg2vApy9vx1C1Tu6D8XYo8NvevI3OlwzBRmiMtsJ2sXupBgEA7PPxiDwNni3qIUkhZ6j5wofDUA=="],
 

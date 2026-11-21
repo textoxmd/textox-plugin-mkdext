@@ -1,0 +1,42 @@
+/* ─── HTML block NodeView（双模式） ───────────────────────── */
+.texto-editor .ProseMirror html-block { display: block; }
+
+/* 源码模式容器（光标在块内） */
+.texto-editor .ProseMirror html-block .html-block-code {
+  padding: 0.75em 1em;
+  margin: 0.5em 0;
+  background: var(--code-block-bg);
+  border: 1px solid var(--code-block-border);
+  border-radius: 6px;
+  font-family: var(--font-family-mono, ui-monospace, Menlo, monospace);
+  font-size: 0.9em;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* 渲染模式容器（光标离开块）— 真实 HTML 直接透出，无背景/边框 */
+.texto-editor .ProseMirror html-block .html-block-render {
+  padding: 0.25em 0;
+  cursor: pointer;
+}
+
+/* iframe 默认撑满宽度、16:9；源码显式写了 height 时以用户为准（aspect-ratio 被忽略） */
+.texto-editor .ProseMirror html-block .html-block-render iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* HTML 注释块：注释在浏览器里渲染为空，始终显示源码（暗色、无代码块外观） */
+.texto-editor .ProseMirror html-block.html-block-comment .html-block-code {
+  padding: 0.25em 0;
+  background: transparent;
+  border: 0;
+  color: var(--editor-text-tertiary);
+  font-style: italic;
+}
+
+/* draft 态：leaveLineDraft 把类装饰在 draft 段落（<p>）上，调低透明度提示 */
+.texto-editor .ProseMirror p.html-block-draft {
+  opacity: 0.7;
+}

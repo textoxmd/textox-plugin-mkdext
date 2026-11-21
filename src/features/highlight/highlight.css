@@ -1,0 +1,15 @@
+/* 高亮文本样式（由 highlight 插件自持；颜色默认值经 activate 注入的
+   `--highlight-color` 变量提供，这里只保留回退色）。 */
+.texto-editor .ProseMirror mark {
+  background: var(--highlight-color, oklch(0.9 0.15 85 / 0.35));
+  color: inherit;
+  padding: 0 0.1em;
+  border-radius: var(--radius-md);
+}
+
+#writer mark {
+  background: var(--highlight-color, oklch(0.9 0.15 85 / 0.35));
+  color: inherit;
+  padding: 0 0.1em;
+  border-radius: var(--radius-sm);
+}

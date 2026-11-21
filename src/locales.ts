@@ -33,6 +33,27 @@ export const locales: Record<string, Record<string, unknown>> = {
       label: 'Table of contents',
       description: 'Build a live outline of the document headings from [toc]',
     },
+    highlight: {
+      label: 'Highlight',
+      description: 'Wrap text in == to add a highlight background',
+      color: {
+        label: 'Highlight color',
+        description: 'Background color for highlighted text',
+      },
+    },
+    html: {
+      label: 'HTML support',
+      description: 'Render GFM HTML blocks, inline tags and comments',
+    },
+    math: {
+      label: 'Math',
+      description: 'Render LaTeX math formulas inline and in fenced code blocks',
+      copyLatex: 'Copy LaTeX Source',
+    },
+    footnote: {
+      label: 'Footnote',
+      description: 'Insert footnotes with references and definitions',
+    },
   },
   'zh-CN': {
     name: 'Markdown 扩展',
@@ -65,6 +86,27 @@ export const locales: Record<string, Record<string, unknown>> = {
     toc: {
       label: '目录',
       description: '输入 [toc] 生成随文档标题实时更新的目录块',
+    },
+    highlight: {
+      label: '高亮',
+      description: '用 == 括选文本添加高亮背景',
+      color: {
+        label: '高亮颜色',
+        description: '选中文本的高亮背景颜色',
+      },
+    },
+    html: {
+      label: 'HTML 支持',
+      description: '渲染 GFM HTML 块、内联标签与注释',
+    },
+    math: {
+      label: '数学公式',
+      description: '渲染行内与代码块中的 LaTeX 数学公式',
+      copyLatex: '复制 LaTeX 源码',
+    },
+    footnote: {
+      label: '脚注',
+      description: '插入带引用与定义的脚注',
     },
   },
 };

@@ -50,3 +50,13 @@ bun run typecheck
 
 `package.json` 的 `@textox/plugin-sdk` 目前指向宿主的 vendor 子模块路径，因为 0.3.0 还没发布到 npm。
 发布后改成 `^0.3.0` 并删除本地路径即可。`@textox/plugin-build` 同理（指向宿主 `packages/plugin-build`）。
+
+## vendored：markdown-it-texmath
+
+`src/features/math/syntax/vendor/texmath.js` 是 `markdown-it-texmath@1.0.0` 的逐字拷贝（MIT），
+只做两处改动：去掉 `require('katex')` 兜底、CommonJS 改为 ESM（见文件头注释）。
+
+原因：该包的 CJS 里有一句静态 `require('katex')`，Rollup 会把它变成产物的裸导入 `import ... from "katex"`。
+插件由宿主经 blob URL 载入、裸模块只走 import map，而宿主不提供 `katex`（宿主自己是把 katex alias 到
+stub），所以插件会在加载期直接失败。本插件的公式渲染只走宿主注入的 MathJax（`renderFormulaToSVG`），
+从不使用 katex 默认渲染器，因此去掉该分支不影响行为。升级 texmath 时按同样两处改动重做拷贝即可。

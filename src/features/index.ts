@@ -1,7 +1,11 @@
 import { alertFeature } from './alert/index';
 import { autoPairFeature } from './autoPair/index';
 import { emojiFeature } from './emoji/index';
+import { footnoteFeature } from './footnote/index';
 import { headingIndicatorFeature } from './headingIndicator/index';
+import { highlightFeature } from './highlight/index';
+import { htmlFeature } from './html/index';
+import { mathFeature } from './math/index';
 import { subSupFeature } from './subSup/index';
 import { tocFeature } from './toc/index';
 import { underlineFeature } from './underline/index';
@@ -19,4 +23,8 @@ export const FEATURES: readonly MkdextFeature[] = [
   autoPairFeature,
   headingIndicatorFeature,
   tocFeature,
+  highlightFeature,
+  htmlFeature,
+  mathFeature,
+  footnoteFeature,
 ];
