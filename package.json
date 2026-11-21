@@ -17,15 +17,11 @@
     "markdown-it-footnote": "^4.0.0",
     "markdown-it-mark": "^4.0.0",
     "markdown-it-sub": "^2.0.0",
-    "markdown-it-sup": "^2.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "markdown-it-sup": "^2.0.0"
   },
   "devDependencies": {
     "@textox/plugin-build": "file:../../Textox/packages/plugin-build",
     "@types/js-yaml": "^4.0.9",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.1",
     "happy-dom": "^17.4.4",
     "typescript": "^5.9.3",
     "vitest": "^3.2.7"
