@@ -5,7 +5,7 @@
     "": {
       "name": "textox-plugin-mkdext",
       "dependencies": {
-        "@textox/plugin-sdk": "file:../../../.local/share/opencode/worktree/d6707f/plugin-unification-p1/vendor/plugin-sdk",
+        "@textox/plugin-sdk": "^0.3.0",
         "js-yaml": "^4.1.1",
         "markdown-it-emoji": "^3.0.0",
         "markdown-it-footnote": "^4.0.0",
@@ -130,9 +130,9 @@
 
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.68.8", "https://mirrors.cloud.tencent.com/npm/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.68.8.tgz", { "os": "win32", "cpu": "x64" }, "sha512-/W1LBsMeQAdiCuH3Z2gkRspl3mlxL+butknhq4vXjmxO45vuT08BqhehxDoE4YS+m6s9lhpq6M9/PjTEAg8PYw=="],
 
-    "@textox/plugin-build": ["@textox/plugin-build@file:../../Textox/packages/plugin-build", { "dependencies": { "@textox/plugin-sdk": "^0.1.0", "fflate": "^0.8.2", "vite": "^6.0.3" }, "devDependencies": { "typescript": "^5.8.2", "vitest": "^3.1.2" }, "bin": { "texto-plugin": "./dist/cli.js" } }],
+    "@textox/plugin-build": ["@textox/plugin-build@file:../../Textox/packages/plugin-build", { "dependencies": { "@textox/plugin-sdk": "^0.3.0", "fflate": "^0.8.2", "vite": "^6.0.3" }, "devDependencies": { "typescript": "^5.8.2", "vitest": "^3.1.2" }, "bin": { "texto-plugin": "./dist/cli.js" } }],
 
-    "@textox/plugin-sdk": ["@textox/plugin-sdk@file:../../../.local/share/opencode/worktree/d6707f/plugin-unification-p1/vendor/plugin-sdk", { "dependencies": { "@types/markdown-it": "^14.1.2", "highlight.js": "^11.11.1", "markdown-it": "^14.1.1", "prosemirror-inputrules": "^1.5.1", "prosemirror-model": "^1.25.4", "prosemirror-state": "^1.4.4", "prosemirror-view": "^1.41.6" }, "devDependencies": { "happy-dom": "^17.4.4", "typescript": "^5.8.2", "vitest": "^3.1.2" } }],
+    "@textox/plugin-sdk": ["@textox/plugin-sdk@0.3.0", "", { "dependencies": { "@types/markdown-it": "^14.1.2", "highlight.js": "^11.11.1", "markdown-it": "^14.1.1", "prosemirror-inputrules": "^1.5.1", "prosemirror-model": "^1.25.4", "prosemirror-state": "^1.4.4", "prosemirror-view": "^1.41.6" } }, "sha512-SYjXwLd26420elMSRcP+OsoBt19KAjXtQQ3Kklf5rNQlIF0itqE4/ffXPks8xBevFhLRANLcW4KMJ4UmUwD0Lg=="],
 
     "@types/chai": ["@types/chai@5.2.3", "https://mirrors.cloud.tencent.com/npm/@types/chai/-/chai-5.2.3.tgz", { "dependencies": { "@types/deep-eql": "*", "assertion-error": "^2.0.1" } }, "sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA=="],
 
@@ -291,7 +291,5 @@
     "whatwg-mimetype": ["whatwg-mimetype@3.0.0", "https://mirrors.cloud.tencent.com/npm/whatwg-mimetype/-/whatwg-mimetype-3.0.0.tgz", {}, "sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q=="],
 
     "why-is-node-running": ["why-is-node-running@2.3.0", "https://mirrors.cloud.tencent.com/npm/why-is-node-running/-/why-is-node-running-2.3.0.tgz", { "dependencies": { "siginfo": "^2.0.0", "stackback": "0.0.2" }, "bin": { "why-is-node-running": "cli.js" } }, "sha512-hUrmaWBdVDcxvYqnyh09zunKzROWjbZTiNy8dBEjkS7ehEDQibXJ7XvlmtbwuTclUiIyN+CyXQD4Vmko8fNm8w=="],
-
-    "@textox/plugin-build/@textox/plugin-sdk": ["@textox/plugin-sdk@0.1.1", "", {}, "sha512-nTLIzzPR2CvCaTzXrUNcbLcLtPOC2VEOY6/eCNYV8R1JS/WN1vXuFlsDwVvD984WnDmIjHJsqyHEBm17dRhHRg=="],
   }
 }

@@ -11,7 +11,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@textox/plugin-sdk": "file:../../../.local/share/opencode/worktree/d6707f/plugin-unification-p1/vendor/plugin-sdk",
+    "@textox/plugin-sdk": "^0.3.0",
     "js-yaml": "^4.1.1",
     "markdown-it-emoji": "^3.0.0",
     "markdown-it-footnote": "^4.0.0",
