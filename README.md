@@ -26,6 +26,13 @@ export const fooFeature: MkdextFeature = {
 `register` 返回的 `Disposable` 会在特性被关闭或插件卸载时统一释放；`editor.register*`
 内部会请求编辑器重建语法管线，所以开关切换是即时的。
 
+## 贡献项的文案约定
+
+- 设置字段的 `labelKey` / `descriptionKey` 写**裸 key**（如 `underline.label`），宿主面板会补 `<插件 id>.` 前缀。
+- 编辑器贡献（`registerFormatToolbarItem` / `registerContextMenuItem` / `registerSelectionAction` /
+  `registerInsertCommand`）的 `labelKey` 同样写**裸 key**，宿主桥接层统一补前缀。
+- 所有文案放在 `src/locales.ts`，按 `<特性>.<字段>` 嵌套即可。
+
 ## 开发
 
 ```sh
