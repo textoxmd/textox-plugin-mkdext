@@ -11,7 +11,6 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@animateicons/react": "^0.3.3",
     "@textox/plugin-sdk": "file:../../../.local/share/opencode/worktree/d6707f/plugin-unification-p1/vendor/plugin-sdk",
     "js-yaml": "^4.1.1",
     "markdown-it-emoji": "^3.0.0",

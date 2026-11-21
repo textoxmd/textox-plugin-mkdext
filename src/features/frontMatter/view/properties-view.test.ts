@@ -850,18 +850,31 @@ describe("PropertiesView", () => {
     }
   });
 
-  it("删除按钮使用与表格一致的动画图标（React 渲染的 14px SVG）", async () => {
+  it("删除按钮使用内联 SVG 图标（14px 的 lucide trash-2，挂载前就绪）", () => {
     setViewMode("panel");
     const { dom, destroy } = mount("title: Hello\n");
     try {
       const btn = dom.querySelector(".fm-delete-block") as HTMLButtonElement;
-      await vi.waitFor(() => {
-        const svg = btn.querySelector("svg");
-        expect(svg).not.toBeNull();
-        expect(svg!.getAttribute("width")).toBe("14");
-      });
-      // 旧的手绘图标 class 不应再出现。
-      expect(btn.querySelector(".fm-delete-icon")).toBeNull();
+      // 同步就绪：图标在 NodeView 交给 ProseMirror 之前已挂到按钮上（无异步渲染）。
+      const svg = btn.querySelector("svg") as SVGSVGElement | null;
+      expect(svg).not.toBeNull();
+      expect(svg!.getAttribute("class")).toBe("fm-delete-icon");
+      expect(svg!.getAttribute("width")).toBe("14");
+      expect(svg!.getAttribute("height")).toBe("14");
+      expect(svg!.getAttribute("viewBox")).toBe("0 0 24 24");
+      expect(svg!.getAttribute("fill")).toBe("none");
+      expect(svg!.getAttribute("stroke")).toBe("currentColor");
+      expect(svg!.getAttribute("stroke-width")).toBe("2");
+      expect(svg!.getAttribute("aria-hidden")).toBe("true");
+      // lucide trash-2 的五条官方路径（桶盖 / 桶身 / 提手 / 两条竖线）。
+      const paths = Array.from(svg!.querySelectorAll("path")).map((p) => p.getAttribute("d"));
+      expect(paths).toEqual([
+        "M3 6h18",
+        "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6",
+        "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2",
+        "M10 11v6",
+        "M14 11v6",
+      ]);
     } finally {
       destroy();
     }
@@ -1032,7 +1045,7 @@ describe("PropertiesView", () => {
     }
   });
 
-  it("编辑器锁定时整块只读（不可编辑/增删/切换源码），解锁后恢复", async () => {
+  it("编辑器锁定时整块只读（不可编辑/增删/切换源码），解锁后恢复", () => {
     setViewMode("panel");
     const { view, dom, destroy } = mount("title: Hello\n");
     try {
@@ -1043,8 +1056,10 @@ describe("PropertiesView", () => {
 
       // 模拟编辑器锁定：PM 的 editable=false 反映为编辑器根 contenteditable=false。
       view.dom.setAttribute("contenteditable", "false");
-      await new Promise((resolve) => setTimeout(resolve, 0));
-
+      // 锁定态在每次渲染时按编辑器根的 contenteditable 重算；宿主推送设置（这里是视图模式）
+      // 就会触发一次重渲染。这样断言不依赖 MutationObserver 的异步投递时序
+      // （happy-dom 的观察回调按 task 批处理，其内部 WeakRef 还可能被 GC 丢弃）。
+      setViewMode("panel");
       expect(dom.getAttribute("data-locked")).toBe("true");
       expect((dom.querySelector(".fm-add-btn") as HTMLButtonElement).disabled).toBe(true);
       expect((dom.querySelector(".fm-toggle") as HTMLButtonElement).disabled).toBe(true);
@@ -1063,7 +1078,7 @@ describe("PropertiesView", () => {
 
       // 解锁后恢复。
       view.dom.removeAttribute("contenteditable");
-      await new Promise((resolve) => setTimeout(resolve, 0));
+      setViewMode("panel");
       expect(dom.getAttribute("data-locked")).toBe("false");
       expect((dom.querySelector(".fm-add-btn") as HTMLButtonElement).disabled).toBe(false);
       expect((dom.querySelector(".fm-val .fm-input") as HTMLTextAreaElement).readOnly).toBe(false);
@@ -1073,23 +1088,24 @@ describe("PropertiesView", () => {
     }
   });
 
-  it("锁定态禁用删除整块按钮且点击无效", async () => {
+  it("锁定态禁用删除整块按钮且点击无效", () => {
     setViewMode("panel");
     const { view, dom, destroy } = mount("title: Hello\n");
     try {
       const btn = dom.querySelector(".fm-delete-block") as HTMLButtonElement;
       expect(btn.disabled).toBe(false);
-      // 实时锁定守卫：MutationObserver 回调前立即点击也不得删除。
+      // 实时锁定守卫：即使渲染尚未跟上（按钮还没禁用）点击也不得删除。
       view.dom.setAttribute("contenteditable", "false");
       btn.click();
       expect(view.state.doc.firstChild!.type.name).toBe("front_matter");
-      await new Promise((resolve) => setTimeout(resolve, 0));
+      // 宿主推送设置会触发一次重渲染，锁定态据此按编辑器根重算（不依赖观察回调的投递时序）。
+      setViewMode("panel");
       expect(btn.disabled).toBe(true);
       btn.click();
       expect(view.state.doc.firstChild!.type.name).toBe("front_matter");
       // 解锁后恢复可点。
       view.dom.removeAttribute("contenteditable");
-      await new Promise((resolve) => setTimeout(resolve, 0));
+      setViewMode("panel");
       expect(btn.disabled).toBe(false);
     } finally {
       destroy();

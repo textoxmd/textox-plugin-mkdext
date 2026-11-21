@@ -1,14 +1,11 @@
-import { TrashIcon } from "@animateicons/react/lucide";
 import type { Node as PMNode } from "prosemirror-model";
 import { Selection, TextSelection } from "prosemirror-state";
 import type { EditorView, NodeView, ViewMutationRecord } from "prosemirror-view";
-import { createElement } from "react";
-import { createRoot, type Root } from "react-dom/client";
 
 import { buildValueControl } from "./controls";
 import { parseEntries } from "./entry-model";
 import { t } from "./i18n";
-import { buildKeyIcon, buildToggleIcon } from "./icons";
+import { buildKeyIcon, buildToggleIcon, buildTrashIcon } from "./icons";
 import { attachKeySuggest, collectKeyCandidates, type KeySuggestHandle } from "./key-suggest";
 import { isBuiltinKey, normalizeValue, resolveEntryType } from "./key-presets";
 import { readViewMode, subscribeViewMode, writeViewMode } from "./mode";
@@ -68,7 +65,6 @@ class PropertiesView implements NodeView {
   readonly contentDOM: HTMLElement;
   private readonly actions: HTMLElement;
   private readonly deleteBtn: HTMLButtonElement;
-  private readonly deleteIconRoot: Root;
   private readonly addBtn: HTMLButtonElement;
   private readonly toggle: HTMLButtonElement;
   private readonly panel: HTMLElement;
@@ -100,10 +96,8 @@ class PropertiesView implements NodeView {
     this.deleteBtn = document.createElement("button");
     this.deleteBtn.type = "button";
     this.deleteBtn.className = "fm-delete-block";
-    // React root 的提交由 React 调度（打开文档时 NodeView 在 effect 内构造，flushSync 不会生效）；
-    // 图标是 contentDOM 之外的装饰性节点，其异步子节点变更由 ignoreMutation 放行。
-    this.deleteIconRoot = createRoot(this.deleteBtn);
-    this.deleteIconRoot.render(createElement(TrashIcon, { size: 14, color: "currentColor" }));
+    // 图标在交给 ProseMirror 之前就绪（NodeView 的 DOM 结构不可在挂载后变化）。
+    this.deleteBtn.appendChild(buildTrashIcon());
     const removeLabel = t("frontMatter.removeBlock", "Remove document properties");
     this.deleteBtn.title = removeLabel;
     this.deleteBtn.setAttribute("aria-label", removeLabel);
@@ -208,7 +202,6 @@ class PropertiesView implements NodeView {
   }
 
   destroy(): void {
-    this.deleteIconRoot.unmount();
     this.lockObserver?.disconnect();
     this.lockObserver = null;
     this.unsubscribe();
@@ -227,6 +220,9 @@ class PropertiesView implements NodeView {
 
   private render(): void {
     this.refreshSourceAttr();
+    // 锁定态以编辑器根为准：PM 的 editable prop 只反映在 `.ProseMirror` 的 contenteditable 上，
+    // 每次渲染重读一次，避免依赖 MutationObserver 的异步投递。
+    this.locked = this.readLocked();
     const panel = this.mode === "panel";
     // 锁定态：整块标记只读，并禁用三个操作按钮（不可删除、不可添加属性、不可切换源码）。
     this.dom.setAttribute("data-locked", this.locked ? "true" : "false");

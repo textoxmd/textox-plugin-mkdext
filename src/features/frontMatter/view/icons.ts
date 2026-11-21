@@ -113,3 +113,19 @@ const TOGGLE_SHAPES: Record<"panel" | "source", readonly Shape[]> = {
 export function buildToggleIcon(mode: "panel" | "source"): SVGSVGElement {
   return createIcon("fm-toggle-icon", TOGGLE_SHAPES[mode]);
 }
+
+/** 「删除整块」图标（lucide `trash-2`，14×14，class=fm-delete-icon）。 */
+const TRASH_SHAPES: readonly Shape[] = [
+  path("M3 6h18"),
+  path("M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"),
+  path("M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"),
+  path("M10 11v6"),
+  path("M14 11v6"),
+];
+
+export function buildTrashIcon(): SVGSVGElement {
+  const svg = createIcon("fm-delete-icon", TRASH_SHAPES);
+  svg.setAttribute("width", "14");
+  svg.setAttribute("height", "14");
+  return svg;
+}

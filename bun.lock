@@ -5,7 +5,6 @@
     "": {
       "name": "textox-plugin-mkdext",
       "dependencies": {
-        "@animateicons/react": "^0.3.3",
         "@textox/plugin-sdk": "file:../../../.local/share/opencode/worktree/d6707f/plugin-unification-p1/vendor/plugin-sdk",
         "js-yaml": "^4.1.1",
         "markdown-it-emoji": "^3.0.0",
@@ -28,8 +27,6 @@
     },
   },
   "packages": {
-    "@animateicons/react": ["@animateicons/react@0.3.5", "https://mirrors.cloud.tencent.com/npm/@animateicons/react/-/react-0.3.5.tgz", { "peerDependencies": { "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" } }, "sha512-ZL8F2EsVfLPGt5a7LPMHrKxgdlS2UWrW4dtkIF++tg7AHzXhPaFIAFjCRV/OvrMgNHkj5GlNwzHD7f6LaLdmOA=="],
-
     "@esbuild/aix-ppc64": ["@esbuild/aix-ppc64@0.25.12", "https://mirrors.cloud.tencent.com/npm/@esbuild/aix-ppc64/-/aix-ppc64-0.25.12.tgz", { "os": "aix", "cpu": "ppc64" }, "sha512-Hhmwd6CInZ3dwpuGTF8fJG6yoWmsToE+vYgD4nytZVxcu1ulHpUQRAB1UJ8+N1Am3Mz4+xOByoQoSZf4D+CpkA=="],
 
     "@esbuild/android-arm": ["@esbuild/android-arm@0.25.12", "https://mirrors.cloud.tencent.com/npm/@esbuild/android-arm/-/android-arm-0.25.12.tgz", { "os": "android", "cpu": "arm" }, "sha512-VJ+sKvNA/GE7Ccacc9Cha7bpS8nyzVv0jdVgwNDaR4gDMC/2TTRc33Ip8qrNYUcpkOHUT5OZ0bUcNNVZQ9RLlg=="],
