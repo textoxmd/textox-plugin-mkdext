@@ -2,6 +2,7 @@ import { alertFeature } from './alert/index';
 import { autoPairFeature } from './autoPair/index';
 import { emojiFeature } from './emoji/index';
 import { footnoteFeature } from './footnote/index';
+import { frontMatterFeature } from './frontMatter/index';
 import { headingIndicatorFeature } from './headingIndicator/index';
 import { highlightFeature } from './highlight/index';
 import { htmlFeature } from './html/index';
@@ -27,4 +28,5 @@ export const FEATURES: readonly MkdextFeature[] = [
   htmlFeature,
   mathFeature,
   footnoteFeature,
+  frontMatterFeature,
 ];

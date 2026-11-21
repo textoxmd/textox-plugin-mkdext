@@ -17,6 +17,8 @@ function createApp(initial: Record<string, unknown>) {
     html: false,
     math: false,
     footnote: false,
+    frontMatter: false,
+    view: false,
     ...initial,
   };
   const listeners = new Set<(snapshot: SettingsSnapshot) => void>();
