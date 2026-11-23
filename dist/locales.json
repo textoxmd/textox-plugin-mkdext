@@ -1,0 +1,1115 @@
+{
+  "defaultLocale": "en-US",
+  "locales": {
+    "en-US": {
+      "name": "Markdown Extensions",
+      "description": "Editor-native Markdown syntax extensions packaged as a single plugin.",
+      "groups": {
+        "editor": "Editing"
+      },
+      "alert": {
+        "label": "Callout boxes",
+        "description": "GitHub-style callouts using blockquote syntax, e.g. > [!NOTE]"
+      },
+      "subSup": {
+        "label": "Subscript & superscript",
+        "description": "Write ~sub~ and ^sup^ to lower or raise text"
+      },
+      "underline": {
+        "label": "Underline",
+        "description": "Wrap the selected text in <u>…</u>"
+      },
+      "emoji": {
+        "label": "Emoji",
+        "description": "Type shortcodes like :smile: to insert emoji"
+      },
+      "autoPair": {
+        "label": "Auto pair",
+        "description": "Automatically close brackets and parentheses while typing"
+      },
+      "headingIndicator": {
+        "label": "Heading badge",
+        "description": "Show the heading level (H1–H6) next to the active heading"
+      },
+      "toc": {
+        "label": "Table of contents",
+        "description": "Build a live outline of the document headings from [toc]"
+      },
+      "highlight": {
+        "label": "Highlight",
+        "description": "Wrap text in == to add a highlight background",
+        "color": {
+          "label": "Highlight color",
+          "description": "Background color for highlighted text"
+        }
+      },
+      "html": {
+        "label": "HTML support",
+        "description": "Render GFM HTML blocks, inline tags and comments"
+      },
+      "math": {
+        "label": "Math",
+        "description": "Render LaTeX math formulas inline and in fenced code blocks",
+        "copyLatex": "Copy LaTeX Source",
+        "mathBlock": "Math Block",
+        "mathBlockDesc": "Insert math block"
+      },
+      "footnote": {
+        "label": "Footnote",
+        "description": "Insert footnotes with references and definitions"
+      },
+      "frontMatter": {
+        "label": "Document properties",
+        "description": "A YAML metadata block at the top of a document, fenced with ---",
+        "defaultView": "Default view",
+        "defaultViewDesc": "How document properties are shown when a file opens",
+        "viewPanel": "Properties panel",
+        "viewSource": "Raw YAML",
+        "panelTitle": "Document properties",
+        "toggleToSource": "View source",
+        "toggleToPanel": "View properties",
+        "addProperty": "Add property",
+        "addPropertyKeyPrompt": "Property name",
+        "removeProperty": "Remove property",
+        "removeBlock": "Remove document properties",
+        "invalidYaml": "Invalid YAML — switch to source to edit"
+      }
+    },
+    "zh-CN": {
+      "name": "Markdown 扩展",
+      "description": "以单个插件形式提供的编辑器原生 Markdown 语法扩展。",
+      "groups": {
+        "editor": "编辑"
+      },
+      "alert": {
+        "label": "提示框",
+        "description": "GitHub 风格的提示框，使用引用语法，如 > [!NOTE]"
+      },
+      "subSup": {
+        "label": "下标与上标",
+        "description": "用 ~sub~ 与 ^sup^ 为文本添加下标与上标"
+      },
+      "underline": {
+        "label": "下划线",
+        "description": "用 <u>…</u> 为选中文本添加下划线"
+      },
+      "emoji": {
+        "label": "表情符号",
+        "description": "输入 :smile: 等短代码插入表情"
+      },
+      "autoPair": {
+        "label": "自动配对",
+        "description": "输入时自动补全配对括号"
+      },
+      "headingIndicator": {
+        "label": "标题角标",
+        "description": "在光标所在标题旁显示标题级别（H1–H6）"
+      },
+      "toc": {
+        "label": "目录",
+        "description": "输入 [toc] 生成随文档标题实时更新的目录块"
+      },
+      "highlight": {
+        "label": "高亮",
+        "description": "用 == 括选文本添加高亮背景",
+        "color": {
+          "label": "高亮颜色",
+          "description": "选中文本的高亮背景颜色"
+        }
+      },
+      "html": {
+        "label": "HTML 支持",
+        "description": "渲染 GFM HTML 块、内联标签与注释"
+      },
+      "math": {
+        "label": "数学公式",
+        "description": "渲染行内与代码块中的 LaTeX 数学公式",
+        "copyLatex": "复制 LaTeX 源码",
+        "mathBlock": "数学公式",
+        "mathBlockDesc": "插入数学公式块"
+      },
+      "footnote": {
+        "label": "脚注",
+        "description": "插入带引用与定义的脚注"
+      },
+      "frontMatter": {
+        "label": "文档属性",
+        "description": "文档开头的 YAML 元信息块，使用 --- 包裹",
+        "defaultView": "默认视图",
+        "defaultViewDesc": "打开文件时文档属性的显示方式",
+        "viewPanel": "属性面板",
+        "viewSource": "原始 YAML",
+        "panelTitle": "文档属性",
+        "toggleToSource": "查看源码",
+        "toggleToPanel": "查看属性面板",
+        "addProperty": "添加属性",
+        "addPropertyKeyPrompt": "属性名",
+        "removeProperty": "删除属性",
+        "removeBlock": "删除文档属性",
+        "invalidYaml": "YAML 无效 — 请切换到源码编辑"
+      }
+    },
+    "zh-TW": {
+      "name": "Markdown 外掛",
+      "description": "以單一外掛形式提供的編輯器原生 Markdown 語法擴充功能。",
+      "groups": {
+        "editor": "編輯"
+      },
+      "alert": {
+        "label": "提示方塊",
+        "description": "GitHub 風格的提示方塊，使用引用語法，如 > [!NOTE]"
+      },
+      "subSup": {
+        "label": "下標與上標",
+        "description": "用 ~sub~ 與 ^sup^ 為文字加上下標與上標"
+      },
+      "underline": {
+        "label": "底線",
+        "description": "用 <u>…</u> 為選取的文字加上底線"
+      },
+      "emoji": {
+        "label": "表情符號",
+        "description": "輸入 :smile: 等簡碼即可插入表情符號"
+      },
+      "autoPair": {
+        "label": "自動配對",
+        "description": "輸入時自動補上成對的括號"
+      },
+      "headingIndicator": {
+        "label": "標題角標",
+        "description": "在游標所在的標題旁顯示標題層級（H1–H6）"
+      },
+      "toc": {
+        "label": "目錄",
+        "description": "輸入 [toc] 產生隨文件標題即時更新的目錄區塊"
+      },
+      "highlight": {
+        "label": "螢光標示",
+        "description": "用 == 括住文字即可加上螢光標示背景",
+        "color": {
+          "label": "螢光標示顏色",
+          "description": "螢光標示文字的背景顏色"
+        }
+      },
+      "html": {
+        "label": "HTML 支援",
+        "description": "轉譯 GFM HTML 區塊、行內標籤與註解"
+      },
+      "math": {
+        "label": "數學公式",
+        "description": "轉譯行內與程式碼區塊中的 LaTeX 數學公式",
+        "copyLatex": "複製 LaTeX 原始碼",
+        "mathBlock": "數學公式",
+        "mathBlockDesc": "插入數學公式區塊"
+      },
+      "footnote": {
+        "label": "註腳",
+        "description": "插入含參照與定義的註腳"
+      },
+      "frontMatter": {
+        "label": "文件屬性",
+        "description": "文件開頭的 YAML 中繼資料區塊，以 --- 包住",
+        "defaultView": "預設檢視",
+        "defaultViewDesc": "開啟檔案時文件屬性的顯示方式",
+        "viewPanel": "屬性面板",
+        "viewSource": "原始 YAML",
+        "panelTitle": "文件屬性",
+        "toggleToSource": "檢視原始碼",
+        "toggleToPanel": "檢視屬性",
+        "addProperty": "新增屬性",
+        "addPropertyKeyPrompt": "屬性名稱",
+        "removeProperty": "移除屬性",
+        "removeBlock": "移除文件屬性",
+        "invalidYaml": "YAML 無效 — 請切換到原始碼編輯"
+      }
+    },
+    "ja-JP": {
+      "name": "Markdown 拡張",
+      "description": "エディタにネイティブ統合された Markdown 構文拡張を 1 つのプラグインにまとめたものです。",
+      "groups": {
+        "editor": "編集"
+      },
+      "alert": {
+        "label": "コールアウト",
+        "description": "GitHub 形式のコールアウトを引用構文で記述します（例: > [!NOTE]）"
+      },
+      "subSup": {
+        "label": "下付き・上付き文字",
+        "description": "~sub~ と ^sup^ で文字を下付き・上付きにします"
+      },
+      "underline": {
+        "label": "下線",
+        "description": "選択したテキストを <u>…</u> で囲みます"
+      },
+      "emoji": {
+        "label": "絵文字",
+        "description": ":smile: のようなショートコードを入力して絵文字を挿入します"
+      },
+      "autoPair": {
+        "label": "自動補完",
+        "description": "入力時に括弧やかっこを自動で閉じます"
+      },
+      "headingIndicator": {
+        "label": "見出しバッジ",
+        "description": "カーソル位置の見出しの横に見出しレベル（H1–H6）を表示します"
+      },
+      "toc": {
+        "label": "目次",
+        "description": "[toc] で見出しからなる目次を生成し、常に最新の状態に保ちます"
+      },
+      "highlight": {
+        "label": "ハイライト",
+        "description": "テキストを == で囲むとハイライト背景が付きます",
+        "color": {
+          "label": "ハイライト色",
+          "description": "ハイライトしたテキストの背景色"
+        }
+      },
+      "html": {
+        "label": "HTML 対応",
+        "description": "GFM の HTML ブロック、インラインタグ、コメントを描画します"
+      },
+      "math": {
+        "label": "数式",
+        "description": "LaTeX の数式を行内およびコードブロック内で描画します",
+        "copyLatex": "LaTeX ソースをコピー",
+        "mathBlock": "数式ブロック",
+        "mathBlockDesc": "数式ブロックを挿入"
+      },
+      "footnote": {
+        "label": "脚注",
+        "description": "参照と定義を伴う脚注を挿入します"
+      },
+      "frontMatter": {
+        "label": "文書プロパティ",
+        "description": "文書冒頭に --- で囲んで記述する YAML メタデータブロック",
+        "defaultView": "既定の表示",
+        "defaultViewDesc": "ファイルを開いたときの文書プロパティの表示方法",
+        "viewPanel": "プロパティパネル",
+        "viewSource": "YAML をそのまま表示",
+        "panelTitle": "文書プロパティ",
+        "toggleToSource": "ソースを表示",
+        "toggleToPanel": "プロパティを表示",
+        "addProperty": "プロパティを追加",
+        "addPropertyKeyPrompt": "プロパティ名",
+        "removeProperty": "プロパティを削除",
+        "removeBlock": "文書プロパティを削除",
+        "invalidYaml": "YAML が無効です。ソース表示に切り替えて編集してください"
+      }
+    },
+    "ko-KR": {
+      "name": "Markdown 확장",
+      "description": "에디터에 기본 내장된 Markdown 문법 확장을 하나의 플러그인으로 묶었습니다.",
+      "groups": {
+        "editor": "편집"
+      },
+      "alert": {
+        "label": "콜아웃",
+        "description": "인용 문법으로 GitHub 스타일 콜아웃을 만듭니다. 예: > [!NOTE]"
+      },
+      "subSup": {
+        "label": "아래첨자·위첨자",
+        "description": "~sub~ 와 ^sup^ 로 텍스트를 아래첨자나 위첨자로 표시합니다"
+      },
+      "underline": {
+        "label": "밑줄",
+        "description": "선택한 텍스트를 <u>…</u> 로 감쌉니다"
+      },
+      "emoji": {
+        "label": "이모지",
+        "description": ":smile: 같은 단축 코드를 입력해 이모지를 삽입합니다"
+      },
+      "autoPair": {
+        "label": "자동 닫기",
+        "description": "입력할 때 괄호와 대괄호를 자동으로 닫습니다"
+      },
+      "headingIndicator": {
+        "label": "제목 배지",
+        "description": "현재 제목 옆에 제목 수준(H1–H6)을 표시합니다"
+      },
+      "toc": {
+        "label": "목차",
+        "description": "[toc] 로 문서 제목의 목차를 만들고 항상 최신 상태로 유지합니다"
+      },
+      "highlight": {
+        "label": "형광펜",
+        "description": "텍스트를 == 로 감싸 형광펜 배경을 추가합니다",
+        "color": {
+          "label": "형광펜 색상",
+          "description": "형광펜으로 표시된 텍스트의 배경색"
+        }
+      },
+      "html": {
+        "label": "HTML 지원",
+        "description": "GFM HTML 블록, 인라인 태그, 주석을 렌더링합니다"
+      },
+      "math": {
+        "label": "수식",
+        "description": "LaTeX 수식을 인라인과 코드 블록에서 렌더링합니다",
+        "copyLatex": "LaTeX 원본 복사",
+        "mathBlock": "수식 블록",
+        "mathBlockDesc": "수식 블록 삽입"
+      },
+      "footnote": {
+        "label": "각주",
+        "description": "참조와 정의가 있는 각주를 삽입합니다"
+      },
+      "frontMatter": {
+        "label": "문서 속성",
+        "description": "문서 맨 위에 --- 로 감싸는 YAML 메타데이터 블록",
+        "defaultView": "기본 보기",
+        "defaultViewDesc": "파일을 열 때 문서 속성을 표시하는 방식",
+        "viewPanel": "속성 패널",
+        "viewSource": "YAML 원본",
+        "panelTitle": "문서 속성",
+        "toggleToSource": "원본 보기",
+        "toggleToPanel": "속성 보기",
+        "addProperty": "속성 추가",
+        "addPropertyKeyPrompt": "속성 이름",
+        "removeProperty": "속성 삭제",
+        "removeBlock": "문서 속성 삭제",
+        "invalidYaml": "YAML이 올바르지 않습니다. 원본 보기로 전환해 편집하세요"
+      }
+    },
+    "de-DE": {
+      "name": "Markdown-Erweiterungen",
+      "description": "Editor-native Markdown-Syntaxerweiterungen als ein einziges Plugin.",
+      "groups": {
+        "editor": "Bearbeiten"
+      },
+      "alert": {
+        "label": "Hinweisboxen",
+        "description": "Hinweisboxen im GitHub-Stil über Blockzitate, z. B. > [!NOTE]"
+      },
+      "subSup": {
+        "label": "Tief- und Hochstellung",
+        "description": "Mit ~sub~ und ^sup^ Text tiefer oder höher setzen"
+      },
+      "underline": {
+        "label": "Unterstrichen",
+        "description": "Ausgewählten Text in <u>…</u> einschließen"
+      },
+      "emoji": {
+        "label": "Emoji",
+        "description": "Kurzwörter wie :smile: eingeben, um Emoji einzufügen"
+      },
+      "autoPair": {
+        "label": "Automatisch schließen",
+        "description": "Klammern beim Tippen automatisch schließen"
+      },
+      "headingIndicator": {
+        "label": "Überschriften-Marke",
+        "description": "Überschriftenebene (H1–H6) neben der aktiven Überschrift anzeigen"
+      },
+      "toc": {
+        "label": "Inhaltsverzeichnis",
+        "description": "Mit [toc] eine automatisch aktualisierte Gliederung der Überschriften erstellen"
+      },
+      "highlight": {
+        "label": "Hervorheben",
+        "description": "Text in == einschließen, um einen Hervorhebungshintergrund hinzuzufügen",
+        "color": {
+          "label": "Hervorhebungsfarbe",
+          "description": "Hintergrundfarbe für hervorgehobenen Text"
+        }
+      },
+      "html": {
+        "label": "HTML-Unterstützung",
+        "description": "GFM-HTML-Blöcke, Inline-Tags und Kommentare rendern"
+      },
+      "math": {
+        "label": "Formeln",
+        "description": "LaTeX-Formeln inline und in Codeblöcken rendern",
+        "copyLatex": "LaTeX-Quelltext kopieren",
+        "mathBlock": "Formelblock",
+        "mathBlockDesc": "Formelblock einfügen"
+      },
+      "footnote": {
+        "label": "Fußnote",
+        "description": "Fußnoten mit Verweisen und Definitionen einfügen"
+      },
+      "frontMatter": {
+        "label": "Dokumenteigenschaften",
+        "description": "Ein YAML-Metadatenblock am Dokumentanfang, eingefasst mit ---",
+        "defaultView": "Standardansicht",
+        "defaultViewDesc": "Wie Dokumenteigenschaften beim Öffnen einer Datei angezeigt werden",
+        "viewPanel": "Eigenschaftenbereich",
+        "viewSource": "Rohes YAML",
+        "panelTitle": "Dokumenteigenschaften",
+        "toggleToSource": "Quelltext anzeigen",
+        "toggleToPanel": "Eigenschaften anzeigen",
+        "addProperty": "Eigenschaft hinzufügen",
+        "addPropertyKeyPrompt": "Name der Eigenschaft",
+        "removeProperty": "Eigenschaft entfernen",
+        "removeBlock": "Dokumenteigenschaften entfernen",
+        "invalidYaml": "Ungültiges YAML – zum Bearbeiten zur Quellansicht wechseln"
+      }
+    },
+    "fr-FR": {
+      "name": "Extensions Markdown",
+      "description": "Extensions de syntaxe Markdown intégrées à l’éditeur, réunies dans un seul plugin.",
+      "groups": {
+        "editor": "Édition"
+      },
+      "alert": {
+        "label": "Encadrés d’alerte",
+        "description": "Encadrés d’alerte façon GitHub avec la syntaxe de citation, par ex. > [!NOTE]"
+      },
+      "subSup": {
+        "label": "Indice et exposant",
+        "description": "Écrivez ~sub~ et ^sup^ pour mettre le texte en indice ou en exposant"
+      },
+      "underline": {
+        "label": "Soulignement",
+        "description": "Entoure le texte sélectionné de <u>…</u>"
+      },
+      "emoji": {
+        "label": "Émoji",
+        "description": "Tapez des codes comme :smile: pour insérer un émoji"
+      },
+      "autoPair": {
+        "label": "Fermeture automatique",
+        "description": "Ferme automatiquement les crochets et parenthèses pendant la saisie"
+      },
+      "headingIndicator": {
+        "label": "Badge de titre",
+        "description": "Affiche le niveau du titre (H1–H6) à côté du titre actif"
+      },
+      "toc": {
+        "label": "Table des matières",
+        "description": "Génère avec [toc] un sommaire des titres du document, toujours à jour"
+      },
+      "highlight": {
+        "label": "Surlignage",
+        "description": "Entoure le texte de == pour ajouter un fond de surlignage",
+        "color": {
+          "label": "Couleur de surlignage",
+          "description": "Couleur de fond du texte surligné"
+        }
+      },
+      "html": {
+        "label": "Prise en charge HTML",
+        "description": "Affiche les blocs HTML GFM, les balises en ligne et les commentaires"
+      },
+      "math": {
+        "label": "Formules",
+        "description": "Affiche les formules LaTeX en ligne et dans les blocs de code",
+        "copyLatex": "Copier la source LaTeX",
+        "mathBlock": "Bloc de formule",
+        "mathBlockDesc": "Insérer un bloc de formule"
+      },
+      "footnote": {
+        "label": "Note de bas de page",
+        "description": "Insère des notes de bas de page avec appels et définitions"
+      },
+      "frontMatter": {
+        "label": "Propriétés du document",
+        "description": "Bloc de métadonnées YAML en tête du document, délimité par ---",
+        "defaultView": "Vue par défaut",
+        "defaultViewDesc": "Mode d’affichage des propriétés du document à l’ouverture d’un fichier",
+        "viewPanel": "Panneau des propriétés",
+        "viewSource": "YAML brut",
+        "panelTitle": "Propriétés du document",
+        "toggleToSource": "Voir la source",
+        "toggleToPanel": "Voir les propriétés",
+        "addProperty": "Ajouter une propriété",
+        "addPropertyKeyPrompt": "Nom de la propriété",
+        "removeProperty": "Supprimer la propriété",
+        "removeBlock": "Supprimer les propriétés du document",
+        "invalidYaml": "YAML invalide — passez à la source pour modifier"
+      }
+    },
+    "es-ES": {
+      "name": "Extensiones de Markdown",
+      "description": "Extensiones de sintaxis Markdown integradas en el editor, empaquetadas como un único plugin.",
+      "groups": {
+        "editor": "Edición"
+      },
+      "alert": {
+        "label": "Cuadros de aviso",
+        "description": "Cuadros de aviso estilo GitHub con sintaxis de cita, p. ej. > [!NOTE]"
+      },
+      "subSup": {
+        "label": "Subíndice y superíndice",
+        "description": "Escribe ~sub~ y ^sup^ para bajar o subir texto"
+      },
+      "underline": {
+        "label": "Subrayado",
+        "description": "Envuelve el texto seleccionado en <u>…</u>"
+      },
+      "emoji": {
+        "label": "Emoji",
+        "description": "Escribe códigos como :smile: para insertar emoji"
+      },
+      "autoPair": {
+        "label": "Cierre automático",
+        "description": "Cierra automáticamente corchetes y paréntesis al escribir"
+      },
+      "headingIndicator": {
+        "label": "Etiqueta de encabezado",
+        "description": "Muestra el nivel del encabezado (H1–H6) junto al encabezado activo"
+      },
+      "toc": {
+        "label": "Tabla de contenidos",
+        "description": "Genera con [toc] un índice de los encabezados del documento siempre actualizado"
+      },
+      "highlight": {
+        "label": "Resaltado",
+        "description": "Envuelve el texto en == para añadir un fondo de resaltado",
+        "color": {
+          "label": "Color de resaltado",
+          "description": "Color de fondo del texto resaltado"
+        }
+      },
+      "html": {
+        "label": "Compatibilidad con HTML",
+        "description": "Renderiza bloques HTML de GFM, etiquetas en línea y comentarios"
+      },
+      "math": {
+        "label": "Fórmulas",
+        "description": "Renderiza fórmulas LaTeX en línea y en bloques de código",
+        "copyLatex": "Copiar código LaTeX",
+        "mathBlock": "Bloque de fórmula",
+        "mathBlockDesc": "Insertar bloque de fórmula"
+      },
+      "footnote": {
+        "label": "Nota al pie",
+        "description": "Inserta notas al pie con referencias y definiciones"
+      },
+      "frontMatter": {
+        "label": "Propiedades del documento",
+        "description": "Bloque de metadatos YAML al inicio del documento, delimitado por ---",
+        "defaultView": "Vista predeterminada",
+        "defaultViewDesc": "Cómo se muestran las propiedades del documento al abrir un archivo",
+        "viewPanel": "Panel de propiedades",
+        "viewSource": "YAML sin formato",
+        "panelTitle": "Propiedades del documento",
+        "toggleToSource": "Ver código",
+        "toggleToPanel": "Ver propiedades",
+        "addProperty": "Añadir propiedad",
+        "addPropertyKeyPrompt": "Nombre de la propiedad",
+        "removeProperty": "Eliminar propiedad",
+        "removeBlock": "Eliminar propiedades del documento",
+        "invalidYaml": "YAML no válido: cambia al código para editarlo"
+      }
+    },
+    "it-IT": {
+      "name": "Estensioni Markdown",
+      "description": "Estensioni di sintassi Markdown native dell’editor, raccolte in un unico plugin.",
+      "groups": {
+        "editor": "Modifica"
+      },
+      "alert": {
+        "label": "Riquadri di avviso",
+        "description": "Riquadri di avviso in stile GitHub con sintassi di citazione, ad es. > [!NOTE]"
+      },
+      "subSup": {
+        "label": "Pedice e apice",
+        "description": "Scrivi ~sub~ e ^sup^ per abbassare o alzare il testo"
+      },
+      "underline": {
+        "label": "Sottolineato",
+        "description": "Racchiude il testo selezionato in <u>…</u>"
+      },
+      "emoji": {
+        "label": "Emoji",
+        "description": "Digita codici come :smile: per inserire emoji"
+      },
+      "autoPair": {
+        "label": "Chiusura automatica",
+        "description": "Chiude automaticamente parentesi quadre e tonde durante la digitazione"
+      },
+      "headingIndicator": {
+        "label": "Badge del titolo",
+        "description": "Mostra il livello del titolo (H1–H6) accanto al titolo attivo"
+      },
+      "toc": {
+        "label": "Indice",
+        "description": "Crea con [toc] un indice dei titoli del documento sempre aggiornato"
+      },
+      "highlight": {
+        "label": "Evidenziazione",
+        "description": "Racchiude il testo tra == per aggiungere uno sfondo evidenziato",
+        "color": {
+          "label": "Colore di evidenziazione",
+          "description": "Colore di sfondo del testo evidenziato"
+        }
+      },
+      "html": {
+        "label": "Supporto HTML",
+        "description": "Visualizza blocchi HTML GFM, tag inline e commenti"
+      },
+      "math": {
+        "label": "Formule",
+        "description": "Visualizza formule LaTeX in linea e nei blocchi di codice",
+        "copyLatex": "Copia sorgente LaTeX",
+        "mathBlock": "Blocco formula",
+        "mathBlockDesc": "Inserisci blocco formula"
+      },
+      "footnote": {
+        "label": "Nota a piè di pagina",
+        "description": "Inserisce note a piè di pagina con richiami e definizioni"
+      },
+      "frontMatter": {
+        "label": "Proprietà del documento",
+        "description": "Blocco di metadati YAML all’inizio del documento, delimitato da ---",
+        "defaultView": "Vista predefinita",
+        "defaultViewDesc": "Come vengono mostrate le proprietà del documento all’apertura di un file",
+        "viewPanel": "Pannello proprietà",
+        "viewSource": "YAML grezzo",
+        "panelTitle": "Proprietà del documento",
+        "toggleToSource": "Mostra sorgente",
+        "toggleToPanel": "Mostra proprietà",
+        "addProperty": "Aggiungi proprietà",
+        "addPropertyKeyPrompt": "Nome proprietà",
+        "removeProperty": "Rimuovi proprietà",
+        "removeBlock": "Rimuovi proprietà del documento",
+        "invalidYaml": "YAML non valido: passa alla sorgente per modificare"
+      }
+    },
+    "pt-PT": {
+      "name": "Extensões Markdown",
+      "description": "Extensões de sintaxe Markdown nativas do editor, reunidas num único plugin.",
+      "groups": {
+        "editor": "Edição"
+      },
+      "alert": {
+        "label": "Caixas de aviso",
+        "description": "Caixas de aviso ao estilo GitHub com sintaxe de citação, por ex. > [!NOTE]"
+      },
+      "subSup": {
+        "label": "Subscrito e sobrescrito",
+        "description": "Escreva ~sub~ e ^sup^ para baixar ou elevar o texto"
+      },
+      "underline": {
+        "label": "Sublinhado",
+        "description": "Envolve o texto selecionado em <u>…</u>"
+      },
+      "emoji": {
+        "label": "Emoji",
+        "description": "Escreva códigos como :smile: para inserir emoji"
+      },
+      "autoPair": {
+        "label": "Fecho automático",
+        "description": "Fecha automaticamente parênteses e chavetas ao escrever"
+      },
+      "headingIndicator": {
+        "label": "Etiqueta de título",
+        "description": "Mostra o nível do título (H1–H6) junto ao título ativo"
+      },
+      "toc": {
+        "label": "Índice",
+        "description": "Cria com [toc] um índice dos títulos do documento sempre atualizado"
+      },
+      "highlight": {
+        "label": "Realce",
+        "description": "Envolve o texto em == para adicionar um fundo de realce",
+        "color": {
+          "label": "Cor de realce",
+          "description": "Cor de fundo do texto realçado"
+        }
+      },
+      "html": {
+        "label": "Suporte HTML",
+        "description": "Renderiza blocos HTML GFM, etiquetas em linha e comentários"
+      },
+      "math": {
+        "label": "Fórmulas",
+        "description": "Renderiza fórmulas LaTeX em linha e em blocos de código",
+        "copyLatex": "Copiar código LaTeX",
+        "mathBlock": "Bloco de fórmula",
+        "mathBlockDesc": "Inserir bloco de fórmula"
+      },
+      "footnote": {
+        "label": "Nota de rodapé",
+        "description": "Insere notas de rodapé com referências e definições"
+      },
+      "frontMatter": {
+        "label": "Propriedades do documento",
+        "description": "Bloco de metadados YAML no início do documento, delimitado por ---",
+        "defaultView": "Vista predefinida",
+        "defaultViewDesc": "Como as propriedades do documento são apresentadas ao abrir um ficheiro",
+        "viewPanel": "Painel de propriedades",
+        "viewSource": "YAML em bruto",
+        "panelTitle": "Propriedades do documento",
+        "toggleToSource": "Ver código",
+        "toggleToPanel": "Ver propriedades",
+        "addProperty": "Adicionar propriedade",
+        "addPropertyKeyPrompt": "Nome da propriedade",
+        "removeProperty": "Remover propriedade",
+        "removeBlock": "Remover propriedades do documento",
+        "invalidYaml": "YAML inválido — mude para o código para editar"
+      }
+    },
+    "ru-RU": {
+      "name": "Расширения Markdown",
+      "description": "Встроенные в редактор расширения синтаксиса Markdown в одном плагине.",
+      "groups": {
+        "editor": "Редактирование"
+      },
+      "alert": {
+        "label": "Блоки-выноски",
+        "description": "Выноски в стиле GitHub через синтаксис цитаты, например > [!NOTE]"
+      },
+      "subSup": {
+        "label": "Нижний и верхний индекс",
+        "description": "Пишите ~sub~ и ^sup^, чтобы опустить или поднять текст"
+      },
+      "underline": {
+        "label": "Подчёркивание",
+        "description": "Оборачивает выделенный текст в <u>…</u>"
+      },
+      "emoji": {
+        "label": "Эмодзи",
+        "description": "Вводите код вроде :smile:, чтобы вставить эмодзи"
+      },
+      "autoPair": {
+        "label": "Автозакрытие",
+        "description": "Автоматически закрывает скобки при вводе"
+      },
+      "headingIndicator": {
+        "label": "Метка заголовка",
+        "description": "Показывает уровень заголовка (H1–H6) рядом с текущим заголовком"
+      },
+      "toc": {
+        "label": "Оглавление",
+        "description": "Создаёт по [toc] оглавление заголовков документа, которое обновляется автоматически"
+      },
+      "highlight": {
+        "label": "Выделение",
+        "description": "Оборачивает текст в ==, чтобы добавить фон выделения",
+        "color": {
+          "label": "Цвет выделения",
+          "description": "Цвет фона выделенного текста"
+        }
+      },
+      "html": {
+        "label": "Поддержка HTML",
+        "description": "Отображает HTML-блоки GFM, встроенные теги и комментарии"
+      },
+      "math": {
+        "label": "Формулы",
+        "description": "Отображает формулы LaTeX в строке и в блоках кода",
+        "copyLatex": "Копировать исходник LaTeX",
+        "mathBlock": "Блок формулы",
+        "mathBlockDesc": "Вставить блок формулы"
+      },
+      "footnote": {
+        "label": "Сноска",
+        "description": "Вставляет сноски со ссылками и определениями"
+      },
+      "frontMatter": {
+        "label": "Свойства документа",
+        "description": "Блок метаданных YAML в начале документа, ограниченный ---",
+        "defaultView": "Представление по умолчанию",
+        "defaultViewDesc": "Как показывать свойства документа при открытии файла",
+        "viewPanel": "Панель свойств",
+        "viewSource": "Исходный YAML",
+        "panelTitle": "Свойства документа",
+        "toggleToSource": "Показать исходник",
+        "toggleToPanel": "Показать свойства",
+        "addProperty": "Добавить свойство",
+        "addPropertyKeyPrompt": "Имя свойства",
+        "removeProperty": "Удалить свойство",
+        "removeBlock": "Удалить свойства документа",
+        "invalidYaml": "Недопустимый YAML — переключитесь на исходник для правки"
+      }
+    },
+    "ar-SA": {
+      "name": "ملحقات Markdown",
+      "description": "ملحقات صياغة Markdown مدمجة في المحرر ومجمّعة في مكوّن إضافي واحد.",
+      "groups": {
+        "editor": "التحرير"
+      },
+      "alert": {
+        "label": "مربعات التنبيه",
+        "description": "مربعات تنبيه بنمط GitHub عبر صياغة الاقتباس، مثل > [!NOTE]"
+      },
+      "subSup": {
+        "label": "الخط السفلي والعلوي",
+        "description": "اكتب ~sub~ و ^sup^ لخفض النص أو رفعه"
+      },
+      "underline": {
+        "label": "التسطير",
+        "description": "يحيط النص المحدد بـ <u>…</u>"
+      },
+      "emoji": {
+        "label": "الإيموجي",
+        "description": "اكتب رموزًا مثل :smile: لإدراج إيموجي"
+      },
+      "autoPair": {
+        "label": "الإغلاق التلقائي",
+        "description": "يغلق الأقواس تلقائيًا أثناء الكتابة"
+      },
+      "headingIndicator": {
+        "label": "شارة العنوان",
+        "description": "يعرض مستوى العنوان (H1–H6) بجانب العنوان النشط"
+      },
+      "toc": {
+        "label": "جدول المحتويات",
+        "description": "ينشئ عبر [toc] فهرسًا حيًّا لعناوين المستند"
+      },
+      "highlight": {
+        "label": "الإبراز",
+        "description": "أحط النص بـ == لإضافة خلفية إبراز",
+        "color": {
+          "label": "لون الإبراز",
+          "description": "لون خلفية النص المبرز"
+        }
+      },
+      "html": {
+        "label": "دعم HTML",
+        "description": "يعرض كتل HTML بصيغة GFM والوسوم السطرية والتعليقات"
+      },
+      "math": {
+        "label": "المعادلات",
+        "description": "يعرض معادلات LaTeX سطريًا وداخل كتل الشيفرة",
+        "copyLatex": "نسخ شيفرة LaTeX",
+        "mathBlock": "كتلة معادلة",
+        "mathBlockDesc": "إدراج كتلة معادلة"
+      },
+      "footnote": {
+        "label": "الحاشية",
+        "description": "يدرج حواشي مع مراجع وتعريفات"
+      },
+      "frontMatter": {
+        "label": "خصائص المستند",
+        "description": "كتلة بيانات وصفية بصيغة YAML في أعلى المستند، محاطة بـ ---",
+        "defaultView": "العرض الافتراضي",
+        "defaultViewDesc": "كيفية عرض خصائص المستند عند فتح ملف",
+        "viewPanel": "لوحة الخصائص",
+        "viewSource": "YAML خام",
+        "panelTitle": "خصائص المستند",
+        "toggleToSource": "عرض الشيفرة",
+        "toggleToPanel": "عرض الخصائص",
+        "addProperty": "إضافة خاصية",
+        "addPropertyKeyPrompt": "اسم الخاصية",
+        "removeProperty": "إزالة الخاصية",
+        "removeBlock": "إزالة خصائص المستند",
+        "invalidYaml": "YAML غير صالح — انتقل إلى الشيفرة للتحرير"
+      }
+    },
+    "hi-IN": {
+      "name": "Markdown एक्सटेंशन",
+      "description": "एडिटर में मूल रूप से मिलने वाले Markdown सिंटैक्स एक्सटेंशन, एक ही प्लगइन में।",
+      "groups": {
+        "editor": "संपादन"
+      },
+      "alert": {
+        "label": "कॉलआउट बॉक्स",
+        "description": "ब्लॉककोट सिंटैक्स से GitHub शैली के कॉलआउट, जैसे > [!NOTE]"
+      },
+      "subSup": {
+        "label": "सबस्क्रिप्ट और सुपरस्क्रिप्ट",
+        "description": "टेक्स्ट को नीचे या ऊपर लाने के लिए ~sub~ और ^sup^ लिखें"
+      },
+      "underline": {
+        "label": "रेखांकन",
+        "description": "चयनित टेक्स्ट को <u>…</u> में लपेटें"
+      },
+      "emoji": {
+        "label": "इमोजी",
+        "description": "इमोजी डालने के लिए :smile: जैसे शॉर्टकोड टाइप करें"
+      },
+      "autoPair": {
+        "label": "स्वतः जोड़ी",
+        "description": "टाइप करते समय ब्रैकेट और कोष्ठक स्वतः बंद करता है"
+      },
+      "headingIndicator": {
+        "label": "शीर्षक बैज",
+        "description": "सक्रिय शीर्षक के पास शीर्षक स्तर (H1–H6) दिखाएँ"
+      },
+      "toc": {
+        "label": "विषय-सूची",
+        "description": "[toc] से दस्तावेज़ के शीर्षकों की लाइव सूची बनाएँ"
+      },
+      "highlight": {
+        "label": "हाइलाइट",
+        "description": "हाइलाइट पृष्ठभूमि जोड़ने के लिए टेक्स्ट को == में लपेटें",
+        "color": {
+          "label": "हाइलाइट रंग",
+          "description": "हाइलाइट किए गए टेक्स्ट की पृष्ठभूमि का रंग"
+        }
+      },
+      "html": {
+        "label": "HTML समर्थन",
+        "description": "GFM HTML ब्लॉक, इनलाइन टैग और टिप्पणियाँ रेंडर करें"
+      },
+      "math": {
+        "label": "गणित",
+        "description": "LaTeX सूत्र इनलाइन और कोड ब्लॉक में रेंडर करें",
+        "copyLatex": "LaTeX स्रोत कॉपी करें",
+        "mathBlock": "गणित ब्लॉक",
+        "mathBlockDesc": "गणित ब्लॉक डालें"
+      },
+      "footnote": {
+        "label": "फ़ुटनोट",
+        "description": "संदर्भों और परिभाषाओं के साथ फ़ुटनोट डालें"
+      },
+      "frontMatter": {
+        "label": "दस्तावेज़ गुण",
+        "description": "दस्तावेज़ के शीर्ष पर --- से घिरा YAML मेटाडेटा ब्लॉक",
+        "defaultView": "डिफ़ॉल्ट दृश्य",
+        "defaultViewDesc": "फ़ाइल खुलने पर दस्तावेज़ गुण कैसे दिखें",
+        "viewPanel": "गुण पैनल",
+        "viewSource": "कच्चा YAML",
+        "panelTitle": "दस्तावेज़ गुण",
+        "toggleToSource": "स्रोत देखें",
+        "toggleToPanel": "गुण देखें",
+        "addProperty": "गुण जोड़ें",
+        "addPropertyKeyPrompt": "गुण का नाम",
+        "removeProperty": "गुण हटाएँ",
+        "removeBlock": "दस्तावेज़ गुण हटाएँ",
+        "invalidYaml": "अमान्य YAML — संपादन के लिए स्रोत पर जाएँ"
+      }
+    },
+    "th-TH": {
+      "name": "ส่วนขยาย Markdown",
+      "description": "ส่วนขยายไวยากรณ์ Markdown ที่ผสานในตัวแก้ไข รวมไว้ในปลั๊กอินเดียว",
+      "groups": {
+        "editor": "การแก้ไข"
+      },
+      "alert": {
+        "label": "กล่องข้อความเน้น",
+        "description": "กล่องข้อความเน้นสไตล์ GitHub ด้วยไวยากรณ์อ้างอิง เช่น > [!NOTE]"
+      },
+      "subSup": {
+        "label": "ตัวห้อยและตัวยก",
+        "description": "พิมพ์ ~sub~ และ ^sup^ เพื่อทำข้อความเป็นตัวห้อยหรือตัวยก"
+      },
+      "underline": {
+        "label": "ขีดเส้นใต้",
+        "description": "ล้อมข้อความที่เลือกด้วย <u>…</u>"
+      },
+      "emoji": {
+        "label": "อีโมจิ",
+        "description": "พิมพ์รหัสย่อ เช่น :smile: เพื่อแทรกอีโมจิ"
+      },
+      "autoPair": {
+        "label": "ปิดวงเล็บอัตโนมัติ",
+        "description": "ปิดวงเล็บและวงเล็บโค้งให้อัตโนมัติขณะพิมพ์"
+      },
+      "headingIndicator": {
+        "label": "ป้ายหัวเรื่อง",
+        "description": "แสดงระดับหัวเรื่อง (H1–H6) ข้างหัวเรื่องที่ใช้งานอยู่"
+      },
+      "toc": {
+        "label": "สารบัญ",
+        "description": "สร้างสารบัญจากหัวเรื่องในเอกสารด้วย [toc] และอัปเดตตลอดเวลา"
+      },
+      "highlight": {
+        "label": "ไฮไลต์",
+        "description": "ล้อมข้อความด้วย == เพื่อเพิ่มพื้นหลังไฮไลต์",
+        "color": {
+          "label": "สีไฮไลต์",
+          "description": "สีพื้นหลังของข้อความที่ไฮไลต์"
+        }
+      },
+      "html": {
+        "label": "รองรับ HTML",
+        "description": "แสดงบล็อก HTML แบบ GFM แท็กในบรรทัด และความคิดเห็น"
+      },
+      "math": {
+        "label": "สูตรคณิตศาสตร์",
+        "description": "แสดงสูตร LaTeX ทั้งในบรรทัดและในบล็อกโค้ด",
+        "copyLatex": "คัดลอกซอร์ส LaTeX",
+        "mathBlock": "บล็อกสูตร",
+        "mathBlockDesc": "แทรกบล็อกสูตร"
+      },
+      "footnote": {
+        "label": "เชิงอรรถ",
+        "description": "แทรกเชิงอรรถพร้อมการอ้างอิงและคำนิยาม"
+      },
+      "frontMatter": {
+        "label": "คุณสมบัติเอกสาร",
+        "description": "บล็อกเมทาดาทา YAML ที่ต้นเอกสาร ล้อมด้วย ---",
+        "defaultView": "มุมมองเริ่มต้น",
+        "defaultViewDesc": "วิธีแสดงคุณสมบัติเอกสารเมื่อเปิดไฟล์",
+        "viewPanel": "แผงคุณสมบัติ",
+        "viewSource": "YAML ดิบ",
+        "panelTitle": "คุณสมบัติเอกสาร",
+        "toggleToSource": "ดูซอร์ส",
+        "toggleToPanel": "ดูคุณสมบัติ",
+        "addProperty": "เพิ่มคุณสมบัติ",
+        "addPropertyKeyPrompt": "ชื่อคุณสมบัติ",
+        "removeProperty": "ลบคุณสมบัติ",
+        "removeBlock": "ลบคุณสมบัติเอกสาร",
+        "invalidYaml": "YAML ไม่ถูกต้อง — สลับไปที่ซอร์สเพื่อแก้ไข"
+      }
+    },
+    "vi-VN": {
+      "name": "Tiện ích Markdown",
+      "description": "Các tiện ích mở rộng cú pháp Markdown tích hợp sẵn trong trình soạn thảo, gói trong một plugin duy nhất.",
+      "groups": {
+        "editor": "Chỉnh sửa"
+      },
+      "alert": {
+        "label": "Hộp chú thích",
+        "description": "Hộp chú thích kiểu GitHub bằng cú pháp trích dẫn, ví dụ > [!NOTE]"
+      },
+      "subSup": {
+        "label": "Chỉ số dưới và trên",
+        "description": "Viết ~sub~ và ^sup^ để hạ thấp hoặc nâng cao chữ"
+      },
+      "underline": {
+        "label": "Gạch chân",
+        "description": "Bọc đoạn văn bản đã chọn trong <u>…</u>"
+      },
+      "emoji": {
+        "label": "Biểu tượng cảm xúc",
+        "description": "Gõ mã ngắn như :smile: để chèn biểu tượng cảm xúc"
+      },
+      "autoPair": {
+        "label": "Tự động đóng cặp",
+        "description": "Tự động đóng ngoặc vuông và ngoặc tròn khi gõ"
+      },
+      "headingIndicator": {
+        "label": "Nhãn tiêu đề",
+        "description": "Hiển thị cấp tiêu đề (H1–H6) bên cạnh tiêu đề đang hoạt động"
+      },
+      "toc": {
+        "label": "Mục lục",
+        "description": "Tạo mục lục trực tiếp từ các tiêu đề trong tài liệu bằng [toc]"
+      },
+      "highlight": {
+        "label": "Đánh dấu",
+        "description": "Bọc văn bản trong == để thêm nền đánh dấu",
+        "color": {
+          "label": "Màu đánh dấu",
+          "description": "Màu nền cho đoạn văn bản được đánh dấu"
+        }
+      },
+      "html": {
+        "label": "Hỗ trợ HTML",
+        "description": "Hiển thị khối HTML theo GFM, thẻ nội tuyến và chú thích"
+      },
+      "math": {
+        "label": "Công thức",
+        "description": "Hiển thị công thức LaTeX trong dòng và trong khối mã",
+        "copyLatex": "Sao chép mã LaTeX",
+        "mathBlock": "Khối công thức",
+        "mathBlockDesc": "Chèn khối công thức"
+      },
+      "footnote": {
+        "label": "Chú thích cuối trang",
+        "description": "Chèn chú thích cuối trang kèm tham chiếu và định nghĩa"
+      },
+      "frontMatter": {
+        "label": "Thuộc tính tài liệu",
+        "description": "Khối siêu dữ liệu YAML ở đầu tài liệu, bao bởi ---",
+        "defaultView": "Chế độ xem mặc định",
+        "defaultViewDesc": "Cách hiển thị thuộc tính tài liệu khi mở tệp",
+        "viewPanel": "Bảng thuộc tính",
+        "viewSource": "YAML thô",
+        "panelTitle": "Thuộc tính tài liệu",
+        "toggleToSource": "Xem mã nguồn",
+        "toggleToPanel": "Xem thuộc tính",
+        "addProperty": "Thêm thuộc tính",
+        "addPropertyKeyPrompt": "Tên thuộc tính",
+        "removeProperty": "Xóa thuộc tính",
+        "removeBlock": "Xóa thuộc tính tài liệu",
+        "invalidYaml": "YAML không hợp lệ — chuyển sang mã nguồn để sửa"
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Markdown syntax extensions for Textox",
   "scripts": {
-    "build": "texto-plugin build .",
+    "build": "texto-plugin build . && bun scripts/emit-locales.ts",
     "pack": "texto-plugin pack .",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run"
